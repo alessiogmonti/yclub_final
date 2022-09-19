@@ -1,16 +1,25 @@
-import { extendTheme } from '@chakra-ui/react'
-import { createBreakpoints } from '@chakra-ui/theme-tools'
+import { extendTheme, ThemeConfig } from '@chakra-ui/react'
+import { Button } from './theming/button'
+import { Heading, Text } from './theming/textstyles'
+import { BoxStyles } from './theming/boxstyles'
 
-const fonts = { mono: `'Menlo', monospace` }
+const fonts = { Heading: "Space Grotesk",
+                Button: "Space Grotesk" }
 
-const breakpoints = createBreakpoints({
+const breakpoints = {
   sm: '40em',
   md: '52em',
   lg: '64em',
   xl: '80em',
-})
+}
+
+const config : ThemeConfig = {
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
+}
 
 const theme = extendTheme({
+  config,
   semanticTokens: {
     colors: {
       text: {
@@ -31,10 +40,19 @@ const theme = extendTheme({
     },
   },
   colors: {
-    black: '#16161D',
+    black: 'rgba(5,21,52,0.99)',
+    dark: 'rgba(5,21,52,0.88)',
+    light : 'rgba(228,228,228,0.99)',
+    accent: '#2491EB'
   },
   fonts,
   breakpoints,
+  components: {
+    Button,
+    Heading,
+    Text,
+  },
+  layerStyles: BoxStyles,
 })
 
 export default theme
