@@ -1,3 +1,4 @@
+import logo from '../assets/ylogo2.gif'
 import { Flex, Stack, Box } from "@chakra-ui/react"
 import Image from 'next/image'
 import { Background } from '../assets/ellipse'
@@ -9,17 +10,14 @@ export const Logo = () => (
         maxH={'100vh'} maxW={'91vw'}>
         <Media />
         <Flex position={'absolute'} top={8} left={1}>
-            <Background style={{zIndex:1}} />
+            <Background />
         </Flex>
     </Box>
 )
 
 const Media = () => (
-    <img src={'/ylogo2.gif'} 
-        width={'100%'}
-        height={'100%'}
+    <Image src={logo} 
         layout={'responsive'}
-        style={{position:'relative',zIndex:3}}
-        priority
+        style={{zIndex:2}}
     />
 )
