@@ -3,6 +3,7 @@ import { Center, Circle, Text, SimpleGrid, Box, VStack, useBoolean } from '@chak
 import { Allocations } from '../assets/tokenallocation'
 import { CustomButton } from '../assets/button'
 import { Info } from '../assets/info'
+import { Details } from '../components/Menus/TokenomicsDetails'
 import { useEffect, useState } from 'react'
 
 const iconStyle = {
@@ -68,7 +69,7 @@ const Tokenomics = () => {
                 )}
             </SimpleGrid>
         </Center>
-        <CustomButton variant={'main-link'} regular_text={'TOKENOMICS'} icon={<Info {...iconStyle} />} />
+        <CustomButton variant={'main-link'} regular_text={'TOKENOMICS'} icon={<Info {...iconStyle} />} content={<Details />} />
     </Container>
     )
 }

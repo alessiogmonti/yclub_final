@@ -16,7 +16,9 @@ const iconStyle = {
 const Video = () => (
   <Container height="100vh" position={'relative'}> 
     <MediaContainer />
-    <CustomButton variant={'main-link'} accent_text={"DUBAI"} regular_text={"Q1 2023"} icon={<Info {...iconStyle} />}
+    <CustomButton 
+      bg={'rgba(5,21,52,0.96)'}
+      zVal={6} variant={'main-link'} accent_text={"DUBAI"} regular_text={"Q1 2023"} icon={<Info {...iconStyle} />}
       content={<Details />} />
   </Container>
 )

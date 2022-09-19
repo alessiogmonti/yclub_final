@@ -20,9 +20,10 @@ export const CTA = () => (
     maxWidth="3xl"
     py={3}
     px={5}
-    zIndex={5}
+    zIndex={1}
   >
-    < CustomButton  variant={'main-link'} 
+    < CustomButton  
+                    variant={'main-link'} 
                     accent_text={"$SYC"}
                     regular_text={'PRESALE'} 
                     icon={<Arrow {...arrowStyle} />} 

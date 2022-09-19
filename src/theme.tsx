@@ -1,5 +1,5 @@
 import { extendTheme, ThemeConfig } from '@chakra-ui/react'
-import { Button } from './theming/button'
+// import { Button } from './theming/button'
 import { Heading, Text } from './theming/textstyles'
 import { BoxStyles } from './theming/boxstyles'
 
@@ -48,7 +48,7 @@ const theme = extendTheme({
   fonts,
   breakpoints,
   components: {
-    Button,
+    // Button,
     Heading,
     Text,
   },

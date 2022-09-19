@@ -1,17 +1,17 @@
-import { IconButton,Center, Slide, Box, useDisclosure } from '@chakra-ui/react'
+import { IconButton, Slide, Box, useDisclosure } from '@chakra-ui/react'
 
 export const Base = (props) => (
         <Slide direction={props.direction} in={props.toggle} style={{ zIndex: props.zVal }}>
-          <Center
+          <Box
             height={'100%'}
             // pl='10px'
             color='white'
-            // pt='9'
+            pt='9'
             bg='black'
             rounded='xl'
-            style={{zIndex: 50}}
+            style={{zIndex: 5}}
           >
             {props.content}
-          </Center>
+          </Box>
         </Slide>
 )

@@ -52,7 +52,7 @@ const mainmenu = [
 export function Menu(){
   const { isOpen, onToggle } = useDisclosure()
   return (
-    <Box position={'fixed'}  style={{zIndex:10}} >
+    <Box position={'fixed'} style={{zIndex:3}}>
       <IconButton
         variant="outline"
         rounded="full"
@@ -66,7 +66,7 @@ export function Menu(){
         onClick={onToggle}
         aria-label="Toggle Theme"
         colorScheme="blue"
-        style={{zIndex:11}}
+        style={{zIndex:10}}
       />
       <Base direction={'left'} toggle={isOpen} content={<MenuLinks/>} />
     </Box>
@@ -77,7 +77,7 @@ const MenuLinks = () => {
   const [active, setActive] = useState(1)
   const toggle = (id) => setActive(id)
   return (
-  <Box>
+  <Box zIndex={6}>
     <Heading variant="Landing" textAlign={'center'}>
         {'HOME'} 
     </Heading>

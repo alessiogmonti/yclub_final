@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Base } from "../components/Menus/Base"
 
 export const CustomButton = (props) => (
-    <Box maxWidth={'90vw'} layerStyle={'button'} position="relative">
+    <Box maxWidth={'90vw'} layerStyle={'button'} position="relative" >
         <Flex minWidth='max-content' alignItems='center' gap='2'>
             <Container display={'flex'} position={'absolute'} top={2} >
                 <Text variant={props.variant} color={'accent'}> 
@@ -25,6 +25,7 @@ export const CustomButton = (props) => (
                         top={props.top}
                         border={props.border}
                         p={props.pad}
+                        type={props.type}
                         />
                 </Link>
                 )
@@ -51,12 +52,11 @@ const MenuButton = (props) => {
                 onClick={onToggle}
                 aria-label="Toggle Theme"
                 colorScheme="blue"
-                style={{zIndex:13}}
+                style={{zIndex:4}}
               />
             ) : (
             <IconButton icon={props.icon } variant={'ghost'} 
                         rounded={'full'} size={'xl'} 
-                        style={{zIndex:13}} 
                         right={props.right}
                         top={props.top}
                         border={props.border}
@@ -64,6 +64,6 @@ const MenuButton = (props) => {
                         onClick = {onToggle}
                         />
             )}
-            <Base direction={'right'} toggle={isOpen} content={props.content} zVal={12}/>
+            <Base direction={'right'} toggle={isOpen} content={props.content} zVal={3}/>
         </>
 )}
