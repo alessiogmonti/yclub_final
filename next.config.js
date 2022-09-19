@@ -1,0 +1,3 @@
+images: {
+    disableStaticImages: true
+}
