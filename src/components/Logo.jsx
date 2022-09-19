@@ -9,16 +9,17 @@ export const Logo = () => (
         maxH={'100vh'} maxW={'91vw'}>
         <Media />
         <Flex position={'absolute'} top={8} left={1}>
-            <Background />
+            <Background style={{zIndex:1}} />
         </Flex>
     </Box>
 )
 
 const Media = () => (
-    <Image src={'/ylogo2.gif'} 
+    <img src={'/ylogo2.gif'} 
         width={'100%'}
         height={'100%'}
         layout={'responsive'}
-        style={{zIndex:2}}
+        style={{position:'relative',zIndex:3}}
+        priority
     />
 )
