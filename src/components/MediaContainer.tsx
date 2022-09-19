@@ -2,7 +2,7 @@ import { Suspense } from "react"
 
 const MediaContainer = () => (
     <Suspense fallback={null}>
-            <video loop autoPlay={false} width={'99%'} height={'99%'} style={{borderRadius:'50px'}}>
+            <video loop autoPlay width={'99%'} height={'99%'} >
             <source
                 src={'/yclub_mobile.mp4'}
                 type="video/mp4"

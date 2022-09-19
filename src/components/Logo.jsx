@@ -16,6 +16,8 @@ export const Logo = () => (
 
 const Media = () => (
     <Image src={'/ylogo2.gif'} 
+        width={'100%'}
+        height={'100%'}
         layout={'responsive'}
         style={{zIndex:2}}
     />
