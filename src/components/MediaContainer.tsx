@@ -14,8 +14,8 @@ const MediaContainer = () => {
                     style={{borderRadius:'50px'}}
                     // ref={videoRef}
                     muted
-                    // playsInline
-                    // autoPlay
+                    playsInline
+                    autoPlay
                     loop >
                     <source
                         src={Media}
