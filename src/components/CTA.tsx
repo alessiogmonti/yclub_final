@@ -8,7 +8,6 @@ const arrowStyle = {
   strokeWidth: '0.25px',
   width: '73px',
   height: '73px',
-  fill: 'white'
 }
 
 export const CTA = () => (
@@ -27,7 +26,11 @@ export const CTA = () => (
                     accent_text={"BUY"}
                     regular_text={'$SYC'} 
                     icon={<Arrow 
-                      {...arrowStyle} 
+                      strokeWidth={'0.25px'}
+                      width={'73px'}
+                      height={'73px'}
+                      fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
+                      // {...arrowStyle} 
                       />} 
                     rotation={{transform: 'rotate(46.69deg)'}}
                     right={-2}

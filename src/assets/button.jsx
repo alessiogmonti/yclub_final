@@ -66,7 +66,7 @@ const MenuButton = (props) => {
                         border={props.border}
                         p={props.pad}
                         onClick = {onToggle}
-                        bg={'blackAlpha.300'}
+                        bg={'dark'}
                         color={'dark'}
                         _dark = {{
                             color:'accent',
