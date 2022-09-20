@@ -13,8 +13,6 @@ export const Hero = ({ title, subtitle, subwidth }: { title,subtitle, subwidth: 
 
 Hero.defaultProps = {
   title: 'YCLUB',
-  subtitle: 'PRESALE LAUNCH',
+  subtitle: 'TOKEN SALE',
   subwidth: '100%'
 }
-
-//  // <Flex justifyContent="center" alignItems="center" height="100%">
