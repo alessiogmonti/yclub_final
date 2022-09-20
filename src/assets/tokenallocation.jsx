@@ -5,7 +5,7 @@ export const Allocations = (props) => (
       <style>
         {`
         .hasStroke{
-          stroke: ${useColorModeValue('black','white')};
+          stroke: white;
           stroke-width: 2;
         }
         .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {

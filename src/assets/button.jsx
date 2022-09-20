@@ -43,8 +43,12 @@ const MenuButton = (props) => {
                 variant="outline"
                 rounded="full"
                 position="fixed"
-                bg={'blackAlpha.800'}
-                color={'accent'}
+                bg={'whiteAlpha.800'}
+                color={'dark'}
+                _dark = {{
+                    color:'accent',
+                    bg:'blackAlpha.800'
+                }}
                 top={4}
                 left={4}
                 fontSize={'35'}
@@ -62,6 +66,12 @@ const MenuButton = (props) => {
                         border={props.border}
                         p={props.pad}
                         onClick = {onToggle}
+                        bg={'blackAlpha.300'}
+                        color={'dark'}
+                        _dark = {{
+                            color:'accent',
+                            bg:'whiteAlpha.100'
+                        }}
                         />
             )}
             <Base direction={'right'} toggle={isOpen} content={props.content} zVal={3}/>

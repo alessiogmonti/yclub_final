@@ -40,9 +40,9 @@ export const BoxStyles = {
         height: '100%',
         color:'white',
         pt:'9',
-        bg:'light',
+        bg:'rgba(228,228,228,0.96)',
         _dark: {
-            bg: 'rgba(5,21,52,0.88)'
+            bg: 'rgba(5,21,52,0.94)'
         },
         rounded:'xl'
     }

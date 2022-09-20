@@ -1,5 +1,5 @@
 import logo from '../assets/ylogo2.gif'
-import { Flex, Stack, Box, Image } from "@chakra-ui/react"
+import { Flex, Stack, Box, Image, useColorModeValue } from "@chakra-ui/react"
 // import Image from 'next/image'
 import { Background } from '../assets/ellipse'
 
@@ -10,7 +10,7 @@ export const Logo = () => (
         maxH={'100vh'} maxW={'91vw'}>
         <Media />
         <Flex position={'absolute'} top={8} left={1} style={{zIndex:0}} >
-            <Background />
+            <Background fill={useColorModeValue('rgba(255,255,255,0.5)', 'dark')} />
         </Flex>
     </Box>
 )
