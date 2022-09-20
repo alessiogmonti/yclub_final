@@ -10,7 +10,7 @@ export const Heading = {
             lineHeight: ['80px', null, null, null, null],
             letterSpacing: '-2%',
             textTransform: 'uppercase',
-            color: 'light'
+            color: mode( 'dark', 'light' ) (props)
         }),
         'SubLanding' : (props) => ({
             fontFamily: 'Space Grotesk',
