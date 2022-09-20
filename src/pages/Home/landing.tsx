@@ -1,7 +1,7 @@
-import { Hero } from '../components/Hero'
-import { Container } from '../components/Container'
-import { CTA } from '../components/CTA'
-import { Logo } from '../components/Logo'
+import { Hero } from '../../components/Home/Hero'
+import { Container } from '../../components/Home/Container'
+import { CTA } from '../../components/Global/CTA'
+import { Logo } from '../../components/Home/Logo'
 import { Box,Divider } from '@chakra-ui/react'
 
 const Landing = () => (

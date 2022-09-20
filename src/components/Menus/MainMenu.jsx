@@ -3,6 +3,7 @@ import { AiFillCloseCircle, AiFillLeftCircle, AiOutlineMenu } from 'react-icons/
 import { useState } from 'react'
 // import NextLink from "next/link"
 import { Base } from './Base'
+import { Link as RLink } from 'react-router-dom'
 
 const mainmenu = [ 
   {'field': 'community', 'active':true, 
@@ -37,7 +38,7 @@ const mainmenu = [
   {'field': 'about', 'active':false, 
     'sublinks': [
       {
-        'field': 'roadmap', 'active':false, 'link': '/'
+        'field': 'roadmap', 'active':false, 'link': '/roadmap'
       },
       {
         'field': 'whitepaper', 'active':false, 'link': '/'
@@ -83,7 +84,9 @@ const MenuLinks = () => {
   return (
   <Box zIndex={6}>
     <Heading variant="Landing" textAlign={'center'}>
-        {'HOME'} 
+      <Link as={RLink} to={"/"}>
+        HOME 
+      </Link>
     </Heading>
     <VStack mt={10} spacing={10} align={'center'}>
       { mainmenu.map( (d, index) => 
@@ -95,12 +98,11 @@ const MenuLinks = () => {
       <VStack mt={10} spacing={'20%'} align={'center'}>     
         { mainmenu[active].sublinks.map( (d) =>
               // <NextLink href={d.link} passHref>
-                <Link>
+                <Link as={RLink} to={d.link}>
                   <Heading variant="SubMenu" textAlign={'center'} >
                     {d.field}
                   </Heading>
                 </Link>
-              // </NextLink>
               )
             }
       </VStack>

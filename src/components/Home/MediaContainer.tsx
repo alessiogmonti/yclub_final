@@ -1,5 +1,5 @@
-import MobileMedia from '../assets/yclub_mobile.mp4'
-import WebMedia from '../assets/yclub_web.mp4'
+import MobileMedia from '../../assets/Home/Media/yclub_mobile.mp4'
+import WebMedia from '../../assets/Home/Media/yclub_web.mp4'
 import { Suspense, useRef, useEffect, useState } from "react"
 import { Box, Show, Hide, useBreakpointValue } from '@chakra-ui/react'
 

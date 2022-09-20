@@ -1,7 +1,7 @@
 import { Link as ChakraLink, Button, IconButton, ButtonGroup, useColorModeValue } from '@chakra-ui/react'
-import { Container } from './Container'
-import { CustomButton } from '../assets/button'
-import { Arrow } from '../assets/arrow'
+import { Container } from '../Home/Container'
+import { CustomButton } from '../../assets/button'
+import { Arrow } from '../../assets/arrow'
 import { useEffect } from 'react'
 
 const arrowStyle = {

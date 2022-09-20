@@ -1,7 +1,7 @@
-import logo from '../assets/ylogo2.gif'
+import logo from '../../assets/Home/Media/ylogo2.gif'
 import { Flex, Stack, Box, Image, useColorModeValue } from "@chakra-ui/react"
 // import Image from 'next/image'
-import { Background } from '../assets/ellipse'
+import { Background } from '../../assets/Home/ellipse'
 
 export const Logo = () => (
     <Box position='relative' height={'100%'}

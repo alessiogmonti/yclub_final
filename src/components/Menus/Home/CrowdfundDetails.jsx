@@ -1,7 +1,6 @@
 import { Heading, Box, VStack, HStack, Divider, Center } from '@chakra-ui/react'
-import { Alarm } from '../../assets/alarm'
-import FormManager from '../utils/form'
-
+import { Alarm } from '../../../assets/Home/alarm'
+import FormManager from '../../utils/form'
 export const Details = () => (
   <Center>
     <VStack p={5} align={'center'} justifyContent={'center'}>

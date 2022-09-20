@@ -1,9 +1,9 @@
-import { Container } from '../components/Container'
+import { Container } from '../../components/Home/Container'
 import { Center, Circle, Text, SimpleGrid, Box, VStack, Divider } from '@chakra-ui/react'
-import { Allocations } from '../assets/tokenallocation'
-import { CustomButton } from '../assets/button'
-import { Info } from '../assets/info'
-import { Details } from '../components/Menus/TokenomicsDetails'
+import { Allocations } from '../../assets/Home/tokenallocation'
+import { CustomButton } from '../../assets/button'
+import { Info } from '../../assets/Home/info'
+import { Details } from '../../components/Menus/Home/TokenomicsDetails'
 import { useEffect, useState } from 'react'
 
 const iconStyle = {

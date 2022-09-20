@@ -1,7 +1,7 @@
-import { Hero } from '../components/Hero'
-import { Container } from '../components/Container'
-import { Socials } from '../components/Socials'
-import { SignUp } from '../components/Signup'
+import { Hero } from '../../components/Home/Hero'
+import { Container } from '../../components/Home/Container'
+import { Socials } from '../../components/Home/Socials'
+import { SignUp } from '../../components/Home/Signup'
 import { Divider } from '@chakra-ui/react'
 
 const Join = () => (

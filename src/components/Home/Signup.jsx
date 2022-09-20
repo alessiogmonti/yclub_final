@@ -1,7 +1,7 @@
 import { Box, Center, Text, Stack, Heading, useColorModeValue } from "@chakra-ui/react"
-import { CustomButton } from "../assets/button"
+import { CustomButton } from "../../assets/button"
 import { FaCheckDouble } from "react-icons/fa"
-import FormManager from "./utils/form"
+import FormManager from "../utils/form"
 
 export const SignUp = () => (
     <Box max-width={'50%'} pt={50} align={'center'}> 

@@ -1,8 +1,8 @@
-import { Container } from '../components/Container'
-import MediaContainer from '../components/MediaContainer'
-import { CustomButton } from '../assets/button'
-import { Info } from '../assets/info'
-import { Details } from '../components/Menus/CrowdfundDetails'
+import { Container } from '../../components/Home/Container'
+import MediaContainer from '../../components/Home/MediaContainer'
+import { CustomButton } from '../../assets/button'
+import { Info } from '../../assets/Home/info'
+import { Details } from '../../components/Menus/Home/CrowdfundDetails'
 import { Divider } from "@chakra-ui/react"
 
 const iconStyle = {

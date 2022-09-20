@@ -1,22 +1,10 @@
-import { Container } from "./components/Container"
-import Landing from "./pages/landing"
-import Video from "./pages/crowdfund"
-import Tokenomics from "./pages/tokenomics"
-import Join from "./pages/join"
-import { Box, Divider } from "@chakra-ui/react"
-import { Menu } from './components/Menus/MainMenu'
-import { DarkModeSwitch } from './components/DarkModeSwitch'
+import { BrowserRouter } from "react-router-dom"
+import AnimatedRoutes from './components/utils/animatedRoutes'
 
 const App = () => (
-  <>
-    <Box layerStyle={'background'} sx={{filter:'blur(38px)'}}/>
-      <Menu/>
-      <DarkModeSwitch />
-      <Landing />
-      <Video />
-      <Tokenomics />
-      <Join />
-  </>
+  <BrowserRouter>
+    <AnimatedRoutes />
+  </BrowserRouter>
 )
 
 export default App
