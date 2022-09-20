@@ -1,4 +1,4 @@
-import { Button, Link, IconButton, Slide, Heading, Box, useDisclosure, VStack, Divider, Spacer } from '@chakra-ui/react'
+import { Button, Link, IconButton, Slide, Heading, Box, useDisclosure, VStack, Divider, Spacer, useColorModeValue } from '@chakra-ui/react'
 import { AiFillCloseCircle, AiFillLeftCircle, AiOutlineMenu } from 'react-icons/ai'
 import { useState } from 'react'
 // import NextLink from "next/link"
@@ -87,7 +87,7 @@ const MenuLinks = () => {
     </Heading>
     <VStack mt={10} spacing={10} align={'center'}>
       { mainmenu.map( (d, index) => 
-          <Heading onClick={() => toggle(index)} variant="Menu" textAlign={'center'} opacity={index==active? 1 : 0.1}>
+          <Heading onClick={() => toggle(index)} variant="Menu" textAlign={'center'} color={index==active? 'white' : useColorModeValue('rgba(240,240,240,0.9)','rgba(155,155,155,1)')}>
             {d.field}
           </Heading>
         )}
