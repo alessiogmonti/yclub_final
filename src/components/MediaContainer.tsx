@@ -11,12 +11,11 @@ const MediaContainer = () => {
         <Box width={'95%'} height={'95%'}>
             <Suspense fallback={null}>
                     <video 
-
-                    display={'block'}
                     style={{borderRadius:'50px'}}
                     // ref={videoRef}
                     muted
                     // playsInline
+                    autoPlay
                     loop >
                     <source
                         src={Media}
