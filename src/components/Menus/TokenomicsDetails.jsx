@@ -2,7 +2,7 @@ import { Center, VStack, Heading, Divider, HStack, Box } from '@chakra-ui/react'
 
 export const Details = () => (
     <Center>
-    <VStack width={'99vw'} mt={14} p={2} align={'center'} justifyContent={'center'}>
+    <VStack mt={14} p={2} align={'center'} justifyContent={'center'}>
       <Heading variant="Landing" textAlign={'center'} lineHeight={'65px'} >
         $SYC
       </Heading>

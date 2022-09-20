@@ -43,11 +43,11 @@ return (
                 <InputLeftElement
                     pointerEvents='none'
                     children={<BsPersonFill size={'33px'} />}
-                    color='rgba(5,21,52,0.99)' _dark={{color: 'white'}}
+                    color='light' _dark={{color: 'white'}}
                 />
                 { props.isSubmitting &&
                 <InputRightElement width={'100%'} top={-10} children={<FormHelperText>We'll never share your information.</FormHelperText>} /> }
-                <Input {...field} color={'dark'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='name' placeholder='name' mb={2}/>
+                <Input {...field} color={'light'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='name' placeholder='name' mb={2}/>
                 </InputGroup>
                 <Text position={'absolute'} right={3} top={0}>
                 <FormErrorMessage>{form.errors.name}</FormErrorMessage>
@@ -65,9 +65,9 @@ return (
                 <InputLeftElement
                     pointerEvents='none'
                     children={<AiOutlineMail size={'30px'} />}
-                    color='rgba(5,21,52,0.99)' _dark={{color: 'white'}}
+                    color='light' _dark={{color: 'white'}}
                 />
-                <Input {...field} color={'dark'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='mail' placeholder='email' mb={5}/>
+                <Input {...field} color={'light'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='mail' placeholder='email' mb={5}/>
 
                 </InputGroup>
             </FormControl>

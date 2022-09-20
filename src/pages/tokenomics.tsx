@@ -1,5 +1,5 @@
 import { Container } from '../components/Container'
-import { Center, Circle, Text, SimpleGrid, Box, VStack, useBoolean } from '@chakra-ui/react'
+import { Center, Circle, Text, SimpleGrid, Box, VStack, Divider } from '@chakra-ui/react'
 import { Allocations } from '../assets/tokenallocation'
 import { CustomButton } from '../assets/button'
 import { Info } from '../assets/info'
@@ -69,7 +69,11 @@ const Tokenomics = () => {
                 )}
             </SimpleGrid>
         </Center>
-        <CustomButton variant={'main-link'} regular_text={'TOKENOMICS'} icon={<Info {...iconStyle} />} content={<Details />} />
+        <Divider my={10} width={'50%'}/>
+            <Box height={'80px'}>
+                <CustomButton variant={'main-link'} regular_text={'TOKENOMICS'} icon={<Info {...iconStyle} />} content={<Details />} />
+            </Box>
+        <Divider mt={10} width={'50%'}/>
     </Container>
     )
 }

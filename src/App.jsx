@@ -3,7 +3,7 @@ import Landing from "./pages/landing"
 import Video from "./pages/crowdfund"
 import Tokenomics from "./pages/tokenomics"
 import Join from "./pages/join"
-import { Box } from "@chakra-ui/react"
+import { Box, Divider } from "@chakra-ui/react"
 import { Menu } from './components/Menus/MainMenu'
 import { DarkModeSwitch } from './components/DarkModeSwitch'
 

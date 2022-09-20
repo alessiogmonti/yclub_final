@@ -55,14 +55,5 @@ export const Text = {
             lineHeight: '44px',
             color: mode( 'dark', 'light') (props)
         }),
-
-        'form' : (props) => ({
-            fontFamily: 'Space Grotesk',
-            fontStyle: 'normal',
-            fontWeight: '400',
-            fontSize: ['28px', null, null, null, null],
-            lineHeight: '28px',
-            color: mode( 'light', 'dark') (props)
-        })
     }
 }

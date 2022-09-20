@@ -1,4 +1,4 @@
-import { Box, Text, Container, Flex, Spacer, IconButton, useDisclosure } from "@chakra-ui/react"
+import { Box, Text, Container, Flex, Spacer, IconButton, useDisclosure, Show, Hide } from "@chakra-ui/react"
 // import Link from 'next/link'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { useState } from "react"
@@ -6,7 +6,7 @@ import { Base } from "../components/Menus/Base"
 
 export const CustomButton = (props) => {
     return (
-        <Box maxWidth={'90vw'} layerStyle={'button'} position="relative">
+        <Box maxWidth={['90vw','500px']} layerStyle={'button'} position="relative">
             <Flex minWidth='max-content' alignItems='center' gap='2'>
                 <Container display={'flex'} position={'absolute'} top={2} textAlign={'center'}>
                     <Text variant={props.variant} color={'accent'}>
@@ -37,7 +37,8 @@ export const CustomButton = (props) => {
 const MenuButton = (props) => {
     const { isOpen, onToggle } = useDisclosure()
     return(
-        <>  
+        <>
+        <Show breakpoint="(max-width:500px)">  
             {isOpen? (
                 <IconButton
                 variant="outline"
@@ -50,7 +51,7 @@ const MenuButton = (props) => {
                     bg:'blackAlpha.800'
                 }}
                 top={4}
-                left={4}
+                left={[4,'51%']}
                 fontSize={'35'}
                 icon={<AiFillCloseCircle />}
                 onClick={onToggle}
@@ -75,5 +76,43 @@ const MenuButton = (props) => {
                         />
             )}
             <Base direction={'right'} toggle={isOpen} content={props.content} zVal={3}/>
-        </>
+        </Show>
+        <Show breakpoint="(min-width:501px)">
+        {isOpen? (
+
+              <IconButton icon={<AiFillCloseCircle />} variant={'ghost'} 
+                        rounded={'full'} size={'xl'} 
+                        fontSize={'55px'}
+                        right={props.right}
+                        top={props.top}
+                        border={props.border}
+                        p={props.pad}
+                        onClick = {onToggle}
+                        bg={'dark'}
+                        color={'white'}
+                        _dark = {{
+                            color:'accent',
+                            bg:'whiteAlpha.100'
+                        }}
+                        style={{zIndex:55}}
+                        />
+            ) : (
+            <IconButton icon={props.icon } variant={'ghost'} 
+                        rounded={'full'} size={'xl'} 
+                        right={props.right}
+                        top={props.top}
+                        border={props.border}
+                        p={props.pad}
+                        onClick = {onToggle}
+                        bg={'dark'}
+                        color={'dark'}
+                        _dark = {{
+                            color:'accent',
+                            bg:'whiteAlpha.100'
+                        }}
+                        />
+            )}
+            <Base direction={'right'} toggle={isOpen} content={props.content} zVal={3}/>
+        </Show>
+    </>
 )}

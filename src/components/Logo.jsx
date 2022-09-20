@@ -8,7 +8,7 @@ export const Logo = () => (
         ml={4}
         mt={4} >
         <Media />
-        <Flex position={'absolute'} top={8} left={1} style={{zIndex:0}} >
+        <Flex position={'absolute'} top={9} left={0} style={{zIndex:0}} >
             <Background fill={useColorModeValue('rgba(255,255,255,0.5)', 'dark')} />
         </Flex>
     </Box>
@@ -16,6 +16,8 @@ export const Logo = () => (
 
 const Media = () => (
     <Image 
+        maxW={'500px'}
+        width={'95%'}
         position={'relative'}
         src={logo} 
         style={{zIndex:1}}

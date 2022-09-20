@@ -2,7 +2,7 @@ import { Flex, FlexProps } from '@chakra-ui/react'
 
 export const Container = (props: FlexProps) => (
   <Flex
-    maxW={'800px'}
+    maxW={[null,null,'800px','1300px']}
     direction="column"
     alignItems="center"
     justifyContent="flex-start"

@@ -14,15 +14,6 @@ export const BoxStyles = {
         width: '95vw'
     },
 
-    'form' : {
-        borderWidth: '1px',
-        borderColor: 'accent',
-        rounded: '88px',
-        bg: 'light',
-        height: '45px',
-        width: '65vw'
-    },
-
     'background' : {
         width: '100%',
         height: '100%',
@@ -37,7 +28,9 @@ export const BoxStyles = {
     },
 
     'menu' : {
+        width: [null,'50%','40%','30%'],
         height: '100%',
+        ml: [null, '50%','60%','70%'],
         color:'white',
         pt:'9',
         bg:'rgba(228,228,228,0.96)',

@@ -3,7 +3,7 @@ import MediaContainer from '../components/MediaContainer'
 import { CustomButton } from '../assets/button'
 import { Info } from '../assets/info'
 import { Details } from '../components/Menus/CrowdfundDetails'
-
+import { Divider } from "@chakra-ui/react"
 
 const iconStyle = {
   stroke: 'rgba(5,21,52,0.88)',
@@ -16,10 +16,12 @@ const iconStyle = {
 const Video = () => (
   <Container  width="100%" position={'relative'}> 
     <MediaContainer />
+    <Divider my={10} width={'50%'}/>
     <CustomButton 
       bg={'rgba(5,21,52,0.96)'}
       zVal={6} variant={'main-link'} accent_text={"DUBAI"} regular_text={"Q1 2023"} icon={<Info {...iconStyle} />}
       content={<Details />} />
+    <Divider my={10} width={'50%'}/>
   </Container>
 )
 

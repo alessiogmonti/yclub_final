@@ -4,7 +4,7 @@ import FormManager from '../utils/form'
 
 export const Details = () => (
   <Center>
-    <VStack width={'90vw'} p={5} align={'center'} justifyContent={'center'}>
+    <VStack p={5} align={'center'} justifyContent={'center'}>
       <Heading variant="Menu" textAlign={'center'} lineHeight={'65px'} >
         CRYPTO'S FIRST EVER COMMUNITY FUNDED SUPERYACHT
       </Heading>

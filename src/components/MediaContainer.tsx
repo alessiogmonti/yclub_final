@@ -1,31 +1,57 @@
 import MobileMedia from '../assets/yclub_mobile.mp4'
+import WebMedia from '../assets/yclub_web.mp4'
+import { Suspense, useRef, useEffect, useState } from "react"
+import { Box, Show, Hide, useBreakpointValue } from '@chakra-ui/react'
 
-import { Suspense, useRef, useEffect } from "react"
-import { Box } from '@chakra-ui/react'
+const addSource = ( src, size ) => {
+    let video = document.querySelector('video');
+    let source = document.querySelector('source')
+    source.src = src
+    video.load();
+}
 
 const MediaContainer = () => {
-    // const videoRef = useRef(undefined)
-    // // useEffect(() => {
-    // //     videoRef.current.defaultMuted= true
-    // // })
+    let size = useWindowSize()
+    useEffect( () => {
+        size.width < 500 ? (
+            addSource( MobileMedia )
+        ) : addSource( WebMedia )
+    }, [size])    
+
     return(
         <Box width={'95%'} height={'95%'}>
-            <Suspense fallback={null}>
-                    <video 
-                    style={{borderRadius:'50px'}}
-                    // ref={videoRef}
-                    muted
-                    playsInline
-                    autoPlay
-                    loop >
-                    <source
-                        src={MobileMedia}
-                        type="video/mp4"
-                    />
-                    Your browser does not support the video tag.
-                    </video>
-            </Suspense>
+                <video 
+                style={{borderRadius:'50px'}}
+                muted
+                playsInline
+                loop >
+                <source
+                    src={''}
+                    type="video/mp4"
+                />
+                Your browser does not support the video tag.
+                </video>
         </Box>
 )}
 
+function useWindowSize() {
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); 
+    return windowSize;
+  }
+  
 export default MediaContainer
