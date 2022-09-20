@@ -1,9 +1,15 @@
+import { mode } from "@chakra-ui/theme-tools"
+
 export const BoxStyles = {
     'button' : {
         borderWidth: '1px',
-        borderColor: 'accent',
+        borderColor: 'white',
         rounded: '88px',
-        bg: 'rgba(5,21,52,0.88)',
+        bg: 'light',
+        _dark: {
+            bg: 'rgba(5,21,52,0.88)',
+            borderColor: 'accent'
+        },
         height: '59px',
         width: '95vw'
     },
@@ -15,5 +21,29 @@ export const BoxStyles = {
         bg: 'light',
         height: '45px',
         width: '65vw'
+    },
+
+    'background' : {
+        width: '100%',
+        height: '100%',
+        position: 'fixed',
+        top: 0,
+        right: 0,
+        zIndex: -1,
+        bgGradient: 'conic-gradient(from 184.76deg at 62% 26%, #2AABEE -1.08deg, #FF67F0 201.97deg, #2EA8EE 339.37deg, #2AABEE 358.92deg, #FF67F0 561.97deg);',
+        _dark: {
+            bgGradient: 'conic-gradient(from 192.37deg at 62% 26%, #051534 -20.63deg, #09768E 228.54deg,#051534 339.37deg, #09768E 588.54deg)'
+        }
+    },
+
+    'menu' : {
+        height: '100%',
+        color:'white',
+        pt:'9',
+        bg:'light',
+        _dark: {
+            bg: 'rgba(5,21,52,0.88)'
+        },
+        rounded:'xl'
     }
 }

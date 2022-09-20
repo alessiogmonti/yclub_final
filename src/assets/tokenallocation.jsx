@@ -1,11 +1,11 @@
-
+import { useColorModeValue } from "@chakra-ui/react"
 export const Allocations = (props) => (
   <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356.57 367.46" >
     <defs>
       <style>
         {`
         .hasStroke{
-          stroke: white;
+          stroke: ${useColorModeValue('black','white')};
           stroke-width: 2;
         }
         .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {

@@ -52,10 +52,10 @@ const Tokenomics = () => {
     return (
     <Container height={'100vh'} pt={'7%'} px={3}>
         <Allocations />
-        <Center position={'relative'} my={10} rounded={'40px'} width={'100%'} height={'21%'} bg='dark' border={'1px'} borderColor={'accent'}>
+        <Center position={'relative'} my={10} rounded={'40px'} width={'100%'} height={'21%'} bg='light' _dark={{bg:'dark', borderColor:'accent'}} border={'1px'} borderColor={'white'}>
             <SimpleGrid pl={2} columns={3} spacingX={2} width={'45%'}>
                 {allocations.map( (d,index) => (
-                    <VStack onClick={() => toggle(index)} border={active == index ? '1px solid white' : null} rounded={'full'} px={6} py={3} width={'110%'}> {d.map( (d2) => (
+                    <VStack onClick={() => toggle(index)} border={active == index ? '1px' : null} borderColor={'dark'} _dark={{borderColor:'white'}} rounded={'full'} px={6} py={3} width={'110%'}> {d.map( (d2) => (
                         <Circle bg={d2.color} size={9} m={1}/>
                         )
                     )} </VStack>
@@ -64,7 +64,7 @@ const Tokenomics = () => {
             </SimpleGrid>
             <SimpleGrid pl={4} ml={1} spacingY={5} spacingX={0} width={'55%'}>
                 {allocations[active].map( (d) => (
-                        <Text> {d.field}: {d.value}% </Text>
+                        <Text color={'dark'} _dark={{color:'white'}}> {d.field}: {d.value}% </Text>
                     )
                 )}
             </SimpleGrid>
