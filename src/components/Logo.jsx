@@ -6,8 +6,7 @@ import { Background } from '../assets/ellipse'
 export const Logo = () => (
     <Box position='relative' height={'100%'}
         ml={4}
-        mt={4}
-        maxH={'500px'} maxW={'500px'}>
+        mt={4} >
         <Media />
         <Flex position={'absolute'} top={8} left={1} style={{zIndex:0}} >
             <Background fill={useColorModeValue('rgba(255,255,255,0.5)', 'dark')} />

@@ -19,7 +19,7 @@ export const CTA = () => (
     maxWidth="3xl"
     py={3}
     px={5}
-    zIndex={1}
+    zIndex={2}
   >
     < CustomButton  
                     variant={'main-link'} 

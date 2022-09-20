@@ -35,10 +35,10 @@ return (
     }}
     >
     {(props) => (
-        <Form>
+        <Form >
         <Field name='name' validate={validateName}>
             {({ field, form }) => (
-            <FormControl isInvalid={form.errors.name && form.touched.name}>
+            <FormControl style={{zIndex:1}} isInvalid={form.errors.name && form.touched.name}>
                 <InputGroup>
                 <InputLeftElement
                     pointerEvents='none'
@@ -57,7 +57,7 @@ return (
         </Field>
         <Field name='email' validate={validateEmail}>
             {({ field, form }) => (
-            <FormControl isInvalid={form.errors.email && form.touched.email}>
+            <FormControl style={{zIndex:1}} isInvalid={form.errors.email && form.touched.email}>
                 <Text position={'absolute'} right={3}>
                 <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                 </Text>

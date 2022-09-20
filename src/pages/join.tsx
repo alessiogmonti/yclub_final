@@ -4,7 +4,7 @@ import { Socials } from '../components/Socials'
 import { SignUp } from '../components/Signup'
 
 const Join = () => (
-  <Container height="100vh" width={'100vw'} maxWidth={'100%'} position={'relative'}>
+  <Container height="100vh" width={'100vw'} position={'relative'}>
     <Hero title={'JOIN'} subtitle={'THE CLUB'}/>
     <Socials />
     <SignUp/>

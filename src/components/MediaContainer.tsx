@@ -1,4 +1,5 @@
-import Media from '../assets/yclub_mobile.mp4'
+import MobileMedia from '../assets/yclub_mobile.mp4'
+
 import { Suspense, useRef, useEffect } from "react"
 import { Box } from '@chakra-ui/react'
 
@@ -18,7 +19,7 @@ const MediaContainer = () => {
                     autoPlay
                     loop >
                     <source
-                        src={Media}
+                        src={MobileMedia}
                         type="video/mp4"
                     />
                     Your browser does not support the video tag.
