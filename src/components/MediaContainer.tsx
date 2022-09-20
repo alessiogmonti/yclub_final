@@ -15,7 +15,7 @@ const MediaContainer = () => {
                     // ref={videoRef}
                     muted
                     // playsInline
-                    autoPlay
+                    // autoPlay
                     loop >
                     <source
                         src={Media}
