@@ -14,7 +14,7 @@ const iconStyle = {
 }
 
 const Video = () => (
-  <Container height="100vh" position={'relative'}> 
+  <Container maxW={'500px'} width="100%" position={'relative'}> 
     <MediaContainer />
     <CustomButton 
       bg={'rgba(5,21,52,0.96)'}

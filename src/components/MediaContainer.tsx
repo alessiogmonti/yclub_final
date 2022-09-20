@@ -11,11 +11,12 @@ const MediaContainer = () => {
             <video 
             style={{borderRadius:'50px'}}
             // ref={videoRef}
+            autoPlay
             muted
             // playsInline
-            loop width={'99%'} height={'99%'}>
+            loop width={'95%'} height={'95%'}>
             <source
-                src={Media}
+                src={require('../assets/yclub_mobile.mp4')}
                 type="video/mp4"
             />
             Your browser does not support the video tag.

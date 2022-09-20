@@ -8,17 +8,15 @@ import { Menu } from './components/Menus/MainMenu'
 import { DarkModeSwitch } from './components/DarkModeSwitch'
 
 const App = () => (
-  <Center max-width={'400px'}>
-    <Box>
-      <Box layerStyle={'background'} sx={{filter:'blur(38px)'}}/>
-      <Menu/>
-      <DarkModeSwitch />
-      <Landing />
-      <Video />
-      <Tokenomics />
-      <Join />
-    </Box>
-  </Center>
+  <Box>
+    <Box layerStyle={'background'} sx={{filter:'blur(38px)'}}/>
+    <Menu/>
+    <DarkModeSwitch />
+    <Landing />
+    <Video />
+    <Tokenomics />
+    <Join />
+  </Box>
 )
 
 export default App
