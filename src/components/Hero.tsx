@@ -1,7 +1,7 @@
 import { Box, Heading, Flex, Center } from '@chakra-ui/react'
 
 export const Hero = ({ title, subtitle, subwidth }: { title,subtitle, subwidth: string }) => (
-  <Box height={'26%'} textAlign={'center'} mt={'65px'}>
+  <Box height={'26%'} textAlign={'center'} mt={'55px'}>
     <Heading variant={'Landing'} color={'light'} fontFamily={'Space Grotesk'}>{title}</Heading>
     <Center>
     <Flex width={subwidth} mt={4} >
