@@ -3,7 +3,7 @@ import WebMedia from '../../assets/Home/Media/yclub_web.mp4'
 import { Suspense, useRef, useEffect, useState } from "react"
 import { Box, Show, Hide, useBreakpointValue } from '@chakra-ui/react'
 
-const addSource = ( src, size ) => {
+const addSource = ( src ) => {
     let video = document.querySelector('video');
     let source = document.querySelector('source')
     source.src = src
@@ -11,12 +11,12 @@ const addSource = ( src, size ) => {
 }
 
 const MediaContainer = () => {
-    let size = useWindowSize()
-    useEffect( () => {
-        size.width < 500 ? (
-            addSource( MobileMedia )
-        ) : addSource( WebMedia )
-    }, [size])    
+    // let size = useWindowSize()
+    // useEffect( () => {
+    //     size.width < 500 ? (
+    //         addSource( MobileMedia )
+    //     ) : addSource( WebMedia )
+    // }, [size])    
 
     return(
         <Box width={'95%'} height={'95%'}>
@@ -27,7 +27,7 @@ const MediaContainer = () => {
                 autoPlay
                 loop >
                 <source
-                    src={MobileMedia}
+                    src={'../../assets/Home/Media/yclub_mobile.mp4'}
                     type="video/mp4"
                 />
                 Your browser does not support the video tag.
