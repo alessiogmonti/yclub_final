@@ -45,7 +45,7 @@ export const Scroller = (props) => {
     const container = useRef(null)
     return (
     <Center>
-      <Box width={'100vw'} p={'1%'} m={'1%'} mt={'20%'} height={'85vh'} ref={container} style={{ overflow: "scroll" }}>
+      <Box width={'100vw'} p={'1%'} m={'1%'} mt={'20%'} height={'82vh'} ref={container} style={{ overflow: "scroll" }}>
           {props.data.map((d, i) => (
             <Card contents={<Accordion i={i} data={d} expanded={expanded} setExpanded={setExpanded} />} key={i} ref={container} />)
           )}
