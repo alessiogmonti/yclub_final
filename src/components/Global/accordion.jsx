@@ -1,27 +1,24 @@
 import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ContentPlaceholder } from "./Placeholder";
-import { Box, IconButton, Heading, Text, HStack, Spacer } from "@chakra-ui/react";
+import { Box, IconButton, Heading, Text, HStack, Spacer, Circle } from "@chakra-ui/react";
 import { AiFillCloseCircle, AiFillDownCircle } from 'react-icons/ai'
 
-export const Accordion = ({ i, expanded, setExpanded }) => {
+export const Accordion = ({ i, data, expanded, setExpanded }) => {
   const isOpen = i === expanded;
 
   // By using `AnimatePresence` to mount and unmount the contents, we can animate
   // them in and out while also only rendering the contents of open accordions
   return (
-    <Box layerStyle={'button'} borderRadius={2} height={'100%'} overflow={'visible'} display={'block'} position={'relative'} width={'100%'}>
-      <HStack px={5} py={2}>
-        <Heading variant={'SubMenu'} fontSize={'25px'} > Carrack </Heading>
+    <Box layerStyle={'button'} borderRadius={'30px'} height={'100%'} overflow={'hidden'} display={'block'} position={'relative'} width={'100%'}>
+      <HStack  px={3} py={4} mr={1}>
+        <Heading variant={'Menu'} fontWeight={700} lineHeight={'24px'} fontSize={'24px'} > {data.title} </Heading>
         <Spacer />
-        <Text variant={'main-link'} fontSize={'15px'}> Q4 2022 </Text>
-        <Spacer />
+        <Text variant={'main-link'} lineHeight={'14px'} fontSize={'15px'}> {data.date} </Text>
+        {/* <Spacer /> */}
         <IconButton
           position={'relative'}
-          float={'right'}
-          p={2}
-          variant="outline"
+          right={0}          variant="outline"
           rounded="full"
           bg={'whiteAlpha.800'}
           color={'dark'}
@@ -49,7 +46,7 @@ export const Accordion = ({ i, expanded, setExpanded }) => {
             }}
             transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
-            <ContentPlaceholder />
+            {data.content}
           </motion.section>
         )}
       </AnimatePresence>

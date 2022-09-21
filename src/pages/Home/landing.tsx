@@ -1,4 +1,4 @@
-import { Hero } from '../../components/Home/Hero'
+import { Hero } from '../../components/Global/Hero'
 import { Container } from '../../components/Home/Container'
 import { CTA } from '../../components/Global/CTA'
 import { Logo } from '../../components/Home/Logo'

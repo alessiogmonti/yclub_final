@@ -6,7 +6,7 @@ import { Base } from './Base'
 import { Link as RLink } from 'react-router-dom'
 
 const mainmenu = [ 
-  {'field': 'community', 'active':true, 
+  {'field': 'community', 'active':false, 
     'sublinks': [
       {
         'field': 'philosophy', 'active':false, 'link': '/'
@@ -35,7 +35,7 @@ const mainmenu = [
       }
     ]
 }, 
-  {'field': 'about', 'active':false, 
+  {'field': 'about', 'active':true, 
     'sublinks': [
       {
         'field': 'roadmap', 'active':false, 'link': '/roadmap'
@@ -79,7 +79,7 @@ export function Menu(){
 }
 
 const MenuLinks = () => {
-  const [active, setActive] = useState(1)
+  const [active, setActive] = useState(2)
   const toggle = (id) => setActive(id)
   return (
   <Box zIndex={6}>
@@ -98,7 +98,7 @@ const MenuLinks = () => {
       <VStack mt={10} spacing={'20%'} align={'center'}>     
         { mainmenu[active].sublinks.map( (d) =>
               // <NextLink href={d.link} passHref>
-                <Link as={RLink} to={d.link}>
+                <Link as={RLink} to={d.link} >
                   <Heading variant="SubMenu" textAlign={'center'} >
                     {d.field}
                   </Heading>

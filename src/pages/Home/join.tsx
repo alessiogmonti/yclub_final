@@ -1,4 +1,4 @@
-import { Hero } from '../../components/Home/Hero'
+import { Hero } from '../../components/Global/Hero'
 import { Container } from '../../components/Home/Container'
 import { Socials } from '../../components/Home/Socials'
 import { SignUp } from '../../components/Home/Signup'

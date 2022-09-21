@@ -1,17 +1,17 @@
-import "./style.css";
+import "./scrollerstyles.css";
 import { motion } from "framer-motion";
 import { Box, Center, Flex } from "@chakra-ui/react"
 import { useRef, forwardRef, useState} from "react";
-import { Accordion } from "../../components/Global/accordion";
+import { Accordion } from "./accordion";
 
 const cardVariants = {
   offscreen: {
-    y: 10,
+    y: 20,
     scale: 0.5,
     opacity: 0.5
   },
   onscreen: {
-    y: 50,
+    y: 100,
     scale: 1,
     opacity: 1,
     transition: {
@@ -28,7 +28,7 @@ const Card = forwardRef(({contents}, ref) => {
       className="card-container"
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: false, amount: 0.3, 
+      viewport={{ once: false, amount: 0.2, 
         margin: "-150px 0px -150px 0px",
         root: ref
      }}
@@ -40,17 +40,16 @@ const Card = forwardRef(({contents}, ref) => {
   );
 })
 
-const items = [
-    0,1,2,3,4
-];
-
-export const Scroller = () => {
+export const Scroller = (props) => {
     const [expanded, setExpanded] = useState()
     const container = useRef(null)
     return (
-    <Box width={'90vw'} ml={'5%'} mt={'20%'} p={5} height={'80vh'} border={'1px solid white'} borderRadius={'20px'} ref={container} style={{ overflow: "scroll" }}>
-        {items.map((d, i) => (
-        <Card contents={<Accordion i={i} expanded={expanded} setExpanded={setExpanded} />} key={i} ref={container} />))}
-    </Box>
+    <Center>
+      <Box width={'100vw'} p={'1%'} m={'1%'} mt={'20%'} height={'85vh'} ref={container} style={{ overflow: "scroll" }}>
+          {props.data.map((d, i) => (
+            <Card contents={<Accordion i={i} data={d} expanded={expanded} setExpanded={setExpanded} />} key={i} ref={container} />)
+          )}
+      </Box>
+    </Center>
     )
 }
