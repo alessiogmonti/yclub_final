@@ -44,7 +44,7 @@ const mainmenu = [
         'field': 'whitepaper', 'active':false, 'link': '/'
       },
       {
-        'field': 'team', 'active':false, 'link': '/'
+        'field': 'team', 'active':false, 'link': '/team'
       }
     ]
   }
