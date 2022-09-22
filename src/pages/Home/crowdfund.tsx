@@ -14,14 +14,14 @@ const iconStyle = {
 }
 
 const Video = () => (
-  <Container  width="100%" position={'relative'}> 
+  <Container width="100%" position={'relative'} mx={[null]} direction={'column'}> 
     <MediaContainer />
-    <Divider my={10} width={'50%'}/>
+    <Divider my={10} width={['50%']}/>
     <CustomButton 
       bg={'rgba(5,21,52,0.96)'}
       zVal={6} variant={'main-link'} accent_text={"DUBAI"} regular_text={"Q1 2023"} icon={<Info {...iconStyle} />}
       content={<Details />} />
-    <Divider my={10} width={'50%'}/>
+    <Divider my={10} width={['50%']}/>
   </Container>
 )
 

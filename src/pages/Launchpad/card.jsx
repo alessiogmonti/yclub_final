@@ -1,4 +1,6 @@
-import { Image, Box, Flex, Spacer, useColorModeValue, Heading, Progress, Center, HStack, Text, Circle, propNames } from '@chakra-ui/react';
+import { Image, Box, Flex, Spacer, useColorModeValue, 
+        Heading, Progress, Center, HStack, Text, 
+        Badge } from '@chakra-ui/react';
 
 import { BuyButton } from "./buyButton";
 import { Timeline } from "./timeline";
@@ -63,27 +65,15 @@ export const Card = (props) => (
                                 }
                             <HStack gap={1}>
                                 <Text fontSize={'15px'}>
-                                    {props.access}
+                                <Badge> {props.access} </Badge>
                                 </Text>
                                 <Spacer />
                                 <Heading pl={1} color='accent' fontSize={'24px'}>
-                                    {props.time}
+                                   {props.time}
                                 </Heading>
                             </HStack>
                         </Box>
                 </Box>
-            </Flex>
-        </Box>
-        <Box position={'absolute'} bottom={100}>
-            {/* this state should be managed outside of card. will leave here for now */}
-            <Flex width={'100%'} gap={'5'} ml={8}>
-            {[...Array(props.amt)].map( (d) => (
-                <>
-                { props.active ? <Circle size={9} bg={'light'} borderColor={'accent'} borderWidth={'1px'}/> :
-                <Circle size={9} bg={'dark'} borderColor={'light'} borderWidth={'1px'}/> }
-                <Spacer />
-                </>
-            ))}
             </Flex>
         </Box>
         <Flex position={'absolute'} bottom={0} width={'100%'} px={1} gap={4}>

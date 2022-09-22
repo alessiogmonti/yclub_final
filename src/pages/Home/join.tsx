@@ -1,16 +1,16 @@
-import { Hero } from '../../components/Global/Hero'
-import { Container } from '../../components/Home/Container'
-import { Socials } from '../../components/Home/Socials'
-import { SignUp } from '../../components/Home/Signup'
-import { Divider } from '@chakra-ui/react'
+import { MobileJoin } from "../../components/Home/mobileJoin"
+import { WebJoin } from "../../components/Home/webJoin"
 
+import { Show } from "@chakra-ui/react"
 const Join = () => (
-  <Container height="100vh" width={'100vw'} position={'relative'}>
-    <Hero title={'JOIN'} subtitle={'THE CLUB'}/>
-    <Socials />
-    <SignUp/>
-    <Divider my={5} width={'50%'}/>
-  </Container>
+  <>
+    <Show breakpoint='(max-width: 800px)'>
+      <MobileJoin />
+    </Show>
+    <Show breakpoint='(min-width: 801px)'>
+      <WebJoin />
+    </Show>
+  </>
 )
 
 export default Join

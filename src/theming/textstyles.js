@@ -12,6 +12,16 @@ export const Heading = {
             textTransform: 'uppercase',
             color: mode( 'dark', 'light' ) (props)
         }),
+        'WebLanding' : (props) => ({
+            fontFamily: 'Space Grotesk',
+            fontStyle: 'normal',
+            fontWeight: 700,
+            fontSize: [null,null, '120px', '150px', '180px'],
+            lineHeight: [null,null, '120px', '150px', '180px'],
+            letterSpacing: '-2%',
+            textTransform: 'uppercase',
+            color: 'light'
+        }),
         'SubLanding' : (props) => ({
             fontFamily: 'Space Grotesk',
             fontStyle: 'normal',
@@ -41,6 +51,37 @@ export const Heading = {
             letterSpacing: '20%',
             textTransform: 'none',
             color: mode( 'dark', 'light' ) (props)
+        }),
+        'SubText' : (props) => ({
+            fontFamily: 'Space Grotesk',
+            fontStyle: 'normal',
+            fontWeight: 'bold',
+            fontSize: ['20px', null, null, null, null],
+            lineHeight: ['25px', null, null, null, null],
+            letterSpacing: '20%',
+            textTransform: 'none',
+            color: 'light',
+        }),
+        'info' : (props) => ({
+            fontFamily: 'Space Grotesk',
+            fontStyle: 'normal',
+            fontWeight: 'bold',
+            fontSize: ['50px', null, null, null, null],
+            lineHeight: ['55px', null, null, null, null],
+            letterSpacing: '20%',
+            textTransform: 'none',
+            color: 'light',
+        }),
+        'special' : (props) => ({
+            fontFamily: 'Space Grotesk',
+            fontStyle: 'normal',
+            fontWeight: 'regular',
+            fontSize: ['60px', null, null, null, null],
+            lineHeight: ['65px', null, null, null, null],
+            letterSpacing: '20%',
+            textTransform: 'none',
+            bgGradient:'linear-gradient(92.55deg, #008AFF -19.47%, #FF3EFF 106.44%);',
+            bgClip:"text"
         })
     }
 }
@@ -61,6 +102,14 @@ export const Text = {
             fontWeight: '700',
             fontSize: ['30px',null,null,null,null],
             lineHeight: '30px',
+            color: mode( 'dark', 'light') (props)
+        }),
+        'info': (props) => ({
+            fontFamily: 'Space Grotesk',
+            fontStyle: 'normal',
+            fontWeight: 'light',
+            fontSize: ['39px',null,null,null,null],
+            lineHeight: '44px',
             color: mode( 'dark', 'light') (props)
         }),
     }

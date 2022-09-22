@@ -3,7 +3,7 @@ import Video from "./Home/crowdfund"
 import Tokenomics from "./Home/tokenomics"
 import Join from "./Home/join"
 
-import { Box } from "@chakra-ui/react"
+import { Box} from "@chakra-ui/react"
 
 import { Menu } from '../components/Menus/MainMenu'
 import { DarkModeSwitch } from '../components/Global/DarkModeSwitch'

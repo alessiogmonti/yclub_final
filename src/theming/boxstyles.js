@@ -11,7 +11,7 @@ export const BoxStyles = {
             borderColor: 'accent'
         },
         height: '59px',
-        width: '95vw'
+        width: ['95vw','50vw']
     },
 
     'background' : {
