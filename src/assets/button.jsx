@@ -8,7 +8,7 @@ export const CustomButton = (props) => {
     return (
         <Box maxWidth={['90vw','500px']} layerStyle={'button'} position="relative">
             <Flex minWidth='max-content' alignItems='center' gap='2'>
-                <Container display={'flex'} position={'absolute'} top={2} textAlign={'center'}>
+                <Container display={'flex'} right={props.textright} position={'absolute'} top={2} textAlign={'center'}>
                     <Text variant={props.variant} color={'accent'}>
                         {props.accent_text} &nbsp;
                     </Text>
@@ -18,16 +18,17 @@ export const CustomButton = (props) => {
                 </Container>
                 <Spacer />
                 {props.content ? (<MenuButton {...props} />) : (
-                    // <Link href={'https://google.com'} passHref>
+                    // <Link href={props.link} passHref>
                         <IconButton icon={props.icon} variant={'ghost'}
                             rounded={'full'} size={'xl'}
                             style={props.rotation}
                             right={props.right}
+                            left={props.left}
                             top={props.top}
                             border={props.border}
                             p={props.pad}
                             type={props.type} />
-                    // </Link>
+                    //</Link>
                 )}
             </Flex>
         </Box>

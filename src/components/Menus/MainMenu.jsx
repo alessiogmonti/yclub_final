@@ -28,7 +28,7 @@ const mainmenu = [
         'field': 'marketplace', 'active':false, 'link': '/'
       },
       {
-        'field': 'launchpad', 'active':false, 'link': '/'
+        'field': 'launchpad', 'active':false, 'link': '/launchpad'
       },
       {
         'field': 'store', 'active':false, 'link': '/'

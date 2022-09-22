@@ -55,5 +55,13 @@ export const Text = {
             lineHeight: '44px',
             color: mode( 'dark', 'light') (props)
         }),
+        'buy-link' : (props) => ({
+            fontFamily: 'Space Grotesk',
+            fontStyle: 'normal',
+            fontWeight: '700',
+            fontSize: ['30px',null,null,null,null],
+            lineHeight: '30px',
+            color: mode( 'dark', 'light') (props)
+        }),
     }
 }
