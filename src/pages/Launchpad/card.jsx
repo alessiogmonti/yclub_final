@@ -1,4 +1,4 @@
-import { Image, Box, Flex, Spacer, useColorModeValue, Heading, Progress, Center, HStack, Text, Circle } from '@chakra-ui/react';
+import { Image, Box, Flex, Spacer, useColorModeValue, Heading, Progress, Center, HStack, Text, Circle, propNames } from '@chakra-ui/react';
 
 import { BuyButton } from "./buyButton";
 import { Timeline } from "./timeline";
@@ -8,18 +8,18 @@ import { Dollar } from "../../assets/Launchpad/dollar"
 import lanaImg from '../../assets/Launchpad/Media/lana.png'
 
 
-export const Card = () => (
+export const Card = (props) => (
     <>
         <Flex position={'absolute'} top={0} width={'100%'} px={1} gap={1}>
             <Box layerStyle={'button'} height={'100%'} px={3} >
                 <Heading textAlign={'center'} color={'accent'}>
-                    0.12 ETH
+                    {props.price}ETH
                 </Heading>
             </Box>
             <Spacer/>
             <Box layerStyle={'button'} height={'100%'} px={3}>
                 <Heading textAlign={'center'}>
-                    RARE
+                    {props.rarity}
                 </Heading>
             </Box>
         </Flex>
@@ -34,22 +34,40 @@ export const Card = () => (
                     height={'22vh'}
                     borderRadius={'60px'} >
                         <Box position={'relative'} left={'10%'} height={'100%'} top={110} width={'80%'} alignItems={'center'} justifyContent={'center'} >
-                            <Progress size={'xs'} 
-                                value={30} 
-                                bg={'light'} borderColor={'dark'} borderWidth={'0.5px'} 
-                                _dark={{ bg:'dark', borderColor:'light'}}
-                                colorScheme={'blue'} style={{zIndex:2}}/>
-                            <HStack>
-                                <Text> 30% </Text> 
-                                <Spacer/>
-                                <Text> 1158/500 </Text>
-                            </HStack>
+                            {props.stock? (
+                                <>
+                                    <Progress size={'xs'} 
+                                        value={props.stock} 
+                                        bg={'light'} borderColor={'dark'} borderWidth={'0.5px'} 
+                                        _dark={{ bg:'dark', borderColor:'light'}}
+                                        colorScheme={'blue'} style={{zIndex:2}}/>
+                                    <HStack>
+                                        <Text> {props.stock}% </Text> 
+                                        <Spacer/>
+                                        <Text> {props.stock_num}/{props.stock_amt} </Text>
+                                    </HStack>
+                                </> ) : (
+                                <>
+                                    <Progress size={'xs'} 
+                                        isIndeterminate
+                                        bg={'light'} borderColor={'dark'} borderWidth={'0.5px'} 
+                                        _dark={{ bg:'dark', borderColor:'light'}}
+                                        colorScheme={'blue'} style={{zIndex:2}}/>
+                                    <HStack>
+                                        {/* <Text> {props.stock}% </Text>  */}
+                                        <Spacer/>
+                                        <Text> {props.stock_num}/{props.stock_amt} </Text>
+                                    </HStack>
+                                </>
+                                )
+                                }
                             <HStack gap={1}>
                                 <Text fontSize={'15px'}>
-                                    PUBLIC MINT
+                                    {props.access}
                                 </Text>
+                                <Spacer />
                                 <Heading pl={1} color='accent' fontSize={'24px'}>
-                                    12D 11H 12M
+                                    {props.time}
                                 </Heading>
                             </HStack>
                         </Box>
@@ -57,11 +75,12 @@ export const Card = () => (
             </Flex>
         </Box>
         <Box position={'absolute'} bottom={100}>
-            {/* <Timeline /> */}
+            {/* this state should be managed outside of card. will leave here for now */}
             <Flex width={'100%'} gap={'5'} ml={8}>
-            {[...Array(4)].map( (d) => (
+            {[...Array(props.amt)].map( (d) => (
                 <>
-                <Circle size={9} bg={'white'} borderColor={'accent'} borderWidth={'1px'}/> 
+                { props.active ? <Circle size={9} bg={'light'} borderColor={'accent'} borderWidth={'1px'}/> :
+                <Circle size={9} bg={'dark'} borderColor={'light'} borderWidth={'1px'}/> }
                 <Spacer />
                 </>
             ))}
