@@ -16,7 +16,7 @@ export const WebLanding = () => (
                 <Heading variant={"Landing"} color={'light'} fontSize={'50px'} letterSpacing={"5px"}>
                     TRAILER- TOKENOMICS
                 </Heading>
-                <IconButton size={'xl'} variant={'outline'} rounded={"full"} color={'light'} _hover={{color:'white', bg:'accent'}} icon={<AiOutlineDownCircle fontSize={"50px"}/>}/>
+                <IconButton size={'xl'} variant={'outline'} rounded={"full"} color={'light'} _hover={{color:'white', bg:'accent'}} icon={<AiOutlineDownCircle fontSize={"50px"}/>} onClick={() => window.scrollBy(0,100)}/>
             </HStack>
         </Box> 
     </Box>

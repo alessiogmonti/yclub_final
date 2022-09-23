@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import { CustomButton } from "../assets/button"
 import { Arrow } from '../assets/arrow'
 import { YLogo } from "../assets/ylogo"
+import { Socials } from "./Home/webSocials"
 
 const links = [ 
     {'field': 'community', 'active':false, 
@@ -39,10 +40,17 @@ export const LandingLogo = () => {
     return(
       <>
         <Box position={'absolute'} top={5} left={10}>
-            <YLogo />
-            <Box p={10}>
+          <Box position={'fixed'} bg={useColorModeValue('dark','light')} layerStyle={'button'} width={'auto'} height={'auto'} zIndex={5}>
+            <HStack>
+              <Box _hover={{bg:'whiteAlpha.200'}} px={2} onClick={() => window.scrollTo(0,0)}>
+                <YLogo />
+              </Box>
+              <Socials />
+            </HStack>
+          </Box>
+          <Box py={'55px'} >
             <Heading variant={"Landing"} color={'light'}> {location != '/' ? location : null} </Heading>
-            </Box>
+          </Box>
         </Box>
         <Box ml={"10%"} px={10} display={'flex'}>
           <Box height={'100vh'}>
