@@ -1,5 +1,5 @@
 import { MobileRoadmap } from "./Roadmap/mobileRoadmap"
-import { WebRoadmap } from "./Roadmap/WebRoadmap"
+import { WebRoadmap } from "./Roadmap/webRoadmap"
 
 import { Show } from "@chakra-ui/react"
 
