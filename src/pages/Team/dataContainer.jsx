@@ -4,7 +4,7 @@ import { AiOutlineCheckCircle, AiOutlineNodeIndex} from "react-icons/ai"
 export const DataContainer = (props) => {
     return (
         <Box px={1} pb={5} transformOrigin={'top center'}>
-            <Text fontWeight={'700'} position={'relative'} left={190} mb={4}> FullName </Text>
+            <Text fontWeight={'700'} position={'relative'} left={190} mb={4}> {props.fullName} </Text>
             <Container>
                 <Circle size={20} float={'left'} mr={3} display={'inline-flex'} bg={'light'} position={'relative'} borderWidth={'1px'} borderColor={'accent'}  />
                 <Text variant={'main-link'} fontFamily={'Helvetica'} fontSize={'15px'} lineHeight={'24px'} >

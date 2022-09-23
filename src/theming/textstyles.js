@@ -108,8 +108,16 @@ export const Text = {
             fontFamily: 'Space Grotesk',
             fontStyle: 'normal',
             fontWeight: 'light',
-            fontSize: ['39px',null,null,null,null],
-            lineHeight: '44px',
+            fontSize: ['33px',null,null,null,null],
+            lineHeight: '38px',
+            color: 'light'
+        }),
+        'webmenu': (props) => ({
+            fontFamily: 'Space Grotesk',
+            fontStyle: 'normal',
+            fontWeight: 'light',
+            fontSize: ['28px',null,null,null,null],
+            lineHeight: '28px',
             color: mode( 'dark', 'light') (props)
         }),
     }

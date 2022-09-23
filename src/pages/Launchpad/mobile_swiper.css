@@ -1,4 +1,4 @@
-.App{
+.MobileApp{
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
@@ -10,16 +10,16 @@
     align-items: center;
   }  
 
-.row{
+.MobileRow{
     position: relative;
   }
   
-  .container{
-    position: absolute;
-    width: 90vw;
-    height: 80vh;
-    overflow: hidden;
-    background: transparent;
-    border: '1px solid white';
-    top: -35vh;
-  }
+.MobileContainer{
+  position: absolute;
+  width: 90vw;
+  height: 80vh;
+  overflow: hidden;
+  background: transparent;
+  border: '1px solid white';
+  top: -35vh;
+}

@@ -6,7 +6,7 @@ import Launchpad from '../../pages/launchpad'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
-function AnimatedRoutes(){
+export function MobileAnimatedRoutes(){
   const location = useLocation()
     return  (
       <AnimatePresence>
@@ -23,4 +23,19 @@ function AnimatedRoutes(){
     )
 }
 
-export default AnimatedRoutes
+export function WebAnimatedRoutes(){
+  const location = useLocation()
+    return  (
+      <AnimatePresence>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="roadmap" element={<Roadmap />} />
+            <Route path="team" element={<Team />} />
+            <Route path="launchpad" element={<Launchpad />} />
+             {/* <Route path="*" element={<NoPage />} */}
+          </Route>
+        </Routes>
+      </AnimatePresence>
+    )
+}
