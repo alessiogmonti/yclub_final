@@ -5,7 +5,7 @@ import { Background } from '../../assets/Home/ellipse'
 
 export const Logo = (props) => (
     <Box position='relative' height={'100%'}
-        ml={4}
+        ml={props.marginLeft}
         mt={4} >
         <Media />
         <Flex position={'absolute'} top={9} right={props.right} style={{zIndex:0}} >

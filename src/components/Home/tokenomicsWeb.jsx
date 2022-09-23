@@ -12,11 +12,11 @@ const TokenomicsWeb = () => {
     //     paths.forEach(d => d.setAttribute('class','hasStroke'))
     // }, [hover])
     return (
-    <Container width={'100vw'} mx={20} height={'100vh'}>
+    <Container width={'100vw'} mx={20} my={20} height={'100vh'}>
         <Flex>
         <Box>
             <VStack align={'left'} spacing={10}>
-                <Heading variant="Landing" fontSize="90px" color={'light'} lineHeight={"100px"}>
+                <Heading variant="Landing" fontSize={["60px","70px","80px","70px","90px"]} color={'light'} lineHeight={["60px","70px","100px"]}>
                 $SYC <br/> TOKENOMICS
                 </Heading>
                 <Box>

@@ -6,9 +6,9 @@ import { Base } from "../components/Menus/Base"
 
 export const CustomButton = (props) => {
     return (
-        <Box maxWidth={['90vw','400px']} layerStyle={'button'} position="relative">
+        <Box maxWidth={['90vw','400px']} layerStyle={'button'} position="relative" height={props.buttonHeight} width={props.buttonWidth}>
             <Flex minWidth='max-content' alignItems='center' gap='2'>
-                <Container display={'flex'} right={props.textright} position={'absolute'} top={2} textAlign={'center'}>
+                <Container display={'flex'} right={props.textright} position={'absolute'} top={2} textAlign={'center'} >
                     <Text variant={props.variant} color={'accent'}>
                         {props.accent_text} &nbsp;
                     </Text>

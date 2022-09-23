@@ -1,6 +1,5 @@
 import { Box, Heading, IconButton, HStack } from "@chakra-ui/react";
 import { AiOutlineDownCircle } from "react-icons/ai";
-import { CTA } from "../Global/CTA";
 
 export const WebLanding = () => (
     <Box width={'100vw'}>
@@ -20,6 +19,5 @@ export const WebLanding = () => (
                 <IconButton size={'xl'} variant={'outline'} rounded={"full"} color={'light'} _hover={{color:'white', bg:'accent'}} icon={<AiOutlineDownCircle fontSize={"50px"}/>}/>
             </HStack>
         </Box> 
-        <CTA />
     </Box>
 )

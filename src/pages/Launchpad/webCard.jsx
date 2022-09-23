@@ -9,6 +9,7 @@ import { Timeline } from "./timeline";
 import { Ethereum } from "../../assets/Launchpad/ethereum"
 import { Dollar } from "../../assets/Launchpad/dollar"
 import lanaImg from '../../assets/Launchpad/Media/lanaWeb.png'
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 
 export const Card = (props) => (
@@ -82,24 +83,24 @@ export const Card = (props) => (
         </Flex>
     </Box>
     <Flex position={'absolute'} bottom={150} width={'10%'} ml={10} px={1} gap={4} zIndex={3}>
-        <BuyButton
+         <BuyButton
             height={'100%'}
             available
             regular_text={'connect wallet'}
             direction={'row-reverse'}
             position={'relative'}
-            icon={<Ethereum
+            icon={props.active? <Ethereum
                 fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
-                />} />
+                /> : <AiFillCloseCircle fontSize={'55px'}/>} />
         <Spacer/>
         <BuyButton 
             available
             direction={'row-reverse'}
             regular_text={'credit card'}
-            icon={<Dollar
+            icon={props.active?<Dollar
                 fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
-                />} />
-    </Flex>
+                /> : <AiFillCloseCircle fontSize={'55px'}/>} /> 
+    </Flex> 
     <Flex position={'absolute'} top={10} ml={10} px={1} gap={4} zIndex={3}>
         <Box layerStyle={'button'} height={'auto'} width={'auto'} border={null} px={3} verticalAlign={'center'} justifyContent={'center'} alignItems={'center'}>
             <Heading>

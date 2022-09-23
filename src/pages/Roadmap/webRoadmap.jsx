@@ -26,9 +26,9 @@ export const WebRoadmap = () => (
             <Heading variant={'Landing'} position={'relative'} 
             fontSize={'50px'} color={'light'}>ROADMAP</Heading>
         </Center>
-        <Box position={'absolute'} width={'50vw'}>
+        <Box position={'absolute'} width={'100vw'} right={'-85%'}>
             <Box display={'flex'} width={'100%'} height={'100vh'} >
-                <Scroller data={data} component={<DataContainer />}/>
+                <Scroller width={'35vw'} data={data} component={<DataContainer />}/>
             </Box>
         </Box>
         {/* <CTA /> */}
