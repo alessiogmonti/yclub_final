@@ -1,6 +1,7 @@
 import { Logo } from "./Home/Logo"
 import { AiOutlineRightCircle, AiOutlineLoading, AiOutlineDownCircle } from "react-icons/ai"
-import { MdConstruction } from "react-icons/md"
+import { FaDraftingCompass } from "react-icons/fa"
+import { GoCircleSlash } from "react-icons/go"
 
 import { CTA } from "./Global/CTA"
 import { Link as RLink } from "react-router-dom"
@@ -30,7 +31,7 @@ const links = [
     {'field': 'about', 'active':true, 
       'sublinks': [
         { 'field': 'roadmap', 'active':false, 'available':true},
-        { 'field': 'whitepaper', 'active':false, 'available':true},
+        { 'field': 'whitepaper', 'active':false, 'available':true, 'external':true},
         { 'field': 'team', 'active':false, 'available':true}
       ]
     }
@@ -44,8 +45,10 @@ export const LandingLogo = () => {
         <Box position={'absolute'} top={5} left={10}>
           <Box position={'fixed'} bg={useColorModeValue('dark','light')} layerStyle={'button'} width={'auto'} height={'auto'} zIndex={5}>
             <HStack>
-              <Box _hover={{bg:'whiteAlpha.200'}} px={2} onClick={() => window.scrollTo(0,0)}>
-                <YLogo />
+              <Box _hover={{bg:'whiteAlpha.200'}} px={2} > {/*onClick={() => window.scrollTo(0,0)} */}
+                <Link as={RLink} to={'/'}>
+                  <YLogo />
+                </Link>
               </Box>
               <Socials />
             </HStack>
@@ -105,9 +108,11 @@ const LinkButton = (props) => {
   return(
     <>
       <Link as={RLink} to={link} style={{margin:20}} 
-            onClick = {() => setActive(!active)}>     
-          { active ?
-              <CustomButton
+            onClick = {() => setActive(!active)}>
+              {console.log(props.available)}  
+            {props.available ? (   
+          active ?
+              <CustomButton 
                       buttonHeight={'auto'}
                       buttonWidth={'260px'}
                       variant={'webmenu'} 
@@ -132,7 +137,14 @@ const LinkButton = (props) => {
                           fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
                           />)} 
                       rotation={ {transform: 'rotate(46.69deg)'}}  />
-          }
+          ) : (<CustomButton
+            buttonHeight={'auto'}
+            buttonWidth={'260px'}
+            variant={'webmenu'} 
+            regular_text={props.field} 
+            icon={ (<GoCircleSlash fontSize={'38px'} 
+                />)} 
+              />) }
         </Link>
     </>
     )

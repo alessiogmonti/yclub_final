@@ -12,7 +12,7 @@ const TokenomicsWeb = () => {
     //     paths.forEach(d => d.setAttribute('class','hasStroke'))
     // }, [hover])
     return (
-    <Container width={'100vw'} m={20} height={'100vh'} top={50}>
+    <Container width={'100vw'} mt={20} mr={20} ml={20} height={'100vh'} top={50}>
         <Flex>
         <Box mr={10} display={'block'}>
             <VStack align={'left'} spacing={10}>
@@ -42,7 +42,7 @@ const TokenomicsWeb = () => {
         </Box>
         <Box display={'flex'} justifyContent={'flex-end'} >
             <Box position={[null,null,'relative','absolute']} right={0} mr={20} ml={10}>
-                <Allocations width={"800"} fill={useColorModeValue('rgba(255,255,255,0.8)', 'dark')} ref={ref}/>
+                <Allocations width={"50vw"} fill={useColorModeValue('rgba(255,255,255,0.8)', 'dark')} ref={ref}/>
             </Box>
         </Box>
         </Flex>
