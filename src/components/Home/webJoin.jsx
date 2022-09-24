@@ -37,7 +37,7 @@ export const WebJoin = () => (
                 </HStack>
                 <Divider width={'35%'}/>
                 <Spacer />
-                <Box position={'absolute'} width={'20%'} right={10} bottom={-50} p={5} mr={10} rounded={'lg'} borderWidth={"1px"} borderColor={'accent'} bg={'black'} zIndex={1} my={10}>
+                <Box position={'absolute'} width={'20%'} right={10} bottom={-50} p={5} mr={10} rounded={'lg'} borderWidth={"1px"} borderColor={'accent'} bg={'light'} _dark={{bg:'dark'}} zIndex={1} my={10}>
                     <FormManager CTA_accent={'EMAIL'} CTA_reg={'ME'} CTA_icon={<Email/>} buttonWidth={'17vw'}/>
                 </Box>
                 <Box display={'flex'} justifyContent={'flex-end'}>
