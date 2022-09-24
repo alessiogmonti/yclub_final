@@ -83,7 +83,7 @@ export const Card = (props) => (
                 available
                 regular_text={'MINT'}
                 position={'relative'}
-                icon={props.stock? <Ethereum
+                icon={props.active? <Ethereum
                     fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
                     /> : <AiFillCloseCircle fontSize={'55px'}/>} />
             <Spacer/>
@@ -91,7 +91,7 @@ export const Card = (props) => (
                 available
                 direction={'row-reverse'}
                 regular_text={'CARD'}
-                icon={props.stock? <Dollar
+                icon={props.active? <Dollar
                     fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
                     /> : <AiFillCloseCircle fontSize={'55px'}/>} />
         </Flex>

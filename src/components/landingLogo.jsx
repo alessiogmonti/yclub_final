@@ -56,7 +56,7 @@ export const LandingLogo = () => {
         </Box>
         <Box ml={"10%"} px={10} display={'flex'}>
           <Box height={'100vh'}>
-              <Flex position={'relative'} top={"15%"} width={'60vw'} left={0}>
+              <Flex position={'relative'} top={"18%"} width={'60vw'} left={0}>
                   <VStack position={'absolute'} zIndex={2} left={-150} top={150} alignItems={'left'}>
                       {links.map( (d,idx) =>
                         <LinkBox key={idx} item={idx} location={location} setLocation={setLocation} clicked={clicked} setClicked={setClicked} offset={idx} {...d} />
@@ -72,7 +72,6 @@ export const LandingLogo = () => {
   }
 
 const LinkBox = (props) => {
-    
     return(
     <>
         <Box layerStyle={'button'} width={'auto'} height={'auto'} pl={2.5} onClick={ () => {props.setClicked(props.item)} }>

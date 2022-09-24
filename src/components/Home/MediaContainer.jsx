@@ -3,8 +3,8 @@
 import { Suspense, useRef, useEffect, useState } from "react"
 import { Box, Show, Hide, useBreakpointValue, AspectRatio } from '@chakra-ui/react'
 
-const mobilemedia = <div style={{position: 'relative', paddingTop: '177.77777777777777%'}}><iframe src="https://iframe.mediadelivery.net/embed/61195/6480af9c-5292-4857-ad8f-72d7ae71a4ae?autoplay=true&loop=true&muted=true" loading="lazy" style={{border: "none", position: "absolute", top: 0, height: "100%", width: "100%", borderRadius:'50px'}} allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowFullScreen="true"></iframe></div>
-const webmedia = <div style={{position: 'relative', paddingTop:' 56.25%'}}><iframe src="https://iframe.mediadelivery.net/embed/61195/0cbedb30-9d95-4757-9527-643abfaf302d?autoplay=true&loop=true&muted=true" loading="lazy" style={{border: "none", position: "absolute", top: 0, height: "100%", width: "100%", borderRadius:'50px'}} allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowFullScreen="true"></iframe></div>
+const mobilemedia = <div style={{position: 'relative', paddingTop: '177.77777777777777%'}}><iframe src="https://iframe.mediadelivery.net/embed/61195/6480af9c-5292-4857-ad8f-72d7ae71a4ae?autoplay=false&loop=false&muted=true" loading="lazy" style={{border: "none", position: "absolute", top: 0, height: "100%", width: "100%", borderRadius:'50px'}} allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowFullScreen={true}></iframe></div>
+const webmedia = <div style={{position: 'relative', paddingTop:' 56.25%'}}><iframe src="https://iframe.mediadelivery.net/embed/61195/0cbedb30-9d95-4757-9527-643abfaf302d?autoplay=false&loop=false&muted=true" loading="lazy" style={{border: "none", position: "absolute", top: 0, height: "100%", width: "100%", borderRadius:'50px'}} allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowFullScreen={true}></iframe></div>
 
 // const addSource = ( src ) => {
 //     let video = document.querySelector('video');

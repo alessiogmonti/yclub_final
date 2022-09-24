@@ -43,40 +43,40 @@ return (
                 <InputLeftElement
                     pointerEvents='none'
                     children={<BsPersonFill size={'33px'} />}
-                    color='light' _dark={{color: 'white'}}
+                    color='black' _dark={{color: 'light'}}
                 />
                 { props.isSubmitting &&
                 <InputRightElement width={'100%'} top={-10} children={<FormHelperText>We'll never share your information.</FormHelperText>} /> }
-                <Input {...field} color={'light'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='name' placeholder='name' mb={2}/>
+                <Input {...field}  rounded={'full'} color={'black'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='name' placeholder='name' mb={2}/>
                 </InputGroup>
-                <Text position={'absolute'} right={3} top={0}>
-                <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                </Text>              
+                    <FormErrorMessage> 
+                        <Text position={'absolute'} right={3} top={0}>{form.errors.name}</Text>              
+                    </FormErrorMessage>
                 </FormControl>
             )}
         </Field>
         <Field name='email' validate={validateEmail}>
             {({ field, form }) => (
             <FormControl style={{zIndex:1}} isInvalid={form.errors.email && form.touched.email}>
-                <Text position={'absolute'} right={3}>
-                <FormErrorMessage>{form.errors.email}</FormErrorMessage>
-                </Text>
+                <FormErrorMessage> 
+                    <Text position={'absolute'} right={3}>{form.errors.email}</Text>
+                </FormErrorMessage>
                 <InputGroup>
                 <InputLeftElement
                     pointerEvents='none'
                     children={<AiOutlineMail size={'30px'} />}
-                    color='light' _dark={{color: 'white'}}
+                    color='black' _dark={{color: 'light'}}
                 />
-                <Input {...field} color={'light'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='mail' placeholder='email' mb={5}/>
+                <Input {...field} color={'black'} rounded={'full'} _dark={{color:'light'}} size={'lg'} variant='flushed' type='mail' placeholder='email' mb={5}/>
 
                 </InputGroup>
             </FormControl>
             )}
         </Field>
         {props.isSubmitting?
-            (        <CustomButton type="submit" variant={'main-link'} accent_text={values.CTA_accent} regular_text={values.CTA_reg} icon={<Spinner mr={1} mt={1} size='xl' />} /> )
+            (        <CustomButton type="submit" variant={'main-link'} accent_text={values.CTA_accent} regular_text={values.CTA_reg} icon={<Spinner mr={1} mt={1} size='xl' /> } buttonWidth={values.buttonWidth} /> )
             :
-            (        <CustomButton type="submit" variant={'main-link'} accent_text={values.CTA_accent} regular_text={values.CTA_reg} icon={values.CTA_icon} top={values.top} right={values.right} border={values.border} pad={values.pad}/> )
+            (        <CustomButton type="submit" variant={'main-link'} accent_text={values.CTA_accent} regular_text={values.CTA_reg} icon={values.CTA_icon} buttonWidth={values.buttonWidth} top={values.top} right={values.right} border={values.border} pad={values.pad}/> )
         }
         </Form>
     )}

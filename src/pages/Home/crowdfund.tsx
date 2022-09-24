@@ -14,8 +14,8 @@ const iconStyle = {
 }
 
 const Video = () => (
-  <Box position={'relative'} display={'block'} height={'100vh'}>
-    <Container width="100%" position={'relative'} mx={[null]} direction={'column'}> 
+  <Box position={'relative'} display={'block'} height={'100vh'} mb={[null,null,null,null,'20vh']}>
+    <Container width="100%" position={'relative'} mx={[null]} direction={'column'} > 
       <MediaContainer />
       <Divider my={10} width={['50%']}/>
       <CustomButton 

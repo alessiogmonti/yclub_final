@@ -5,7 +5,7 @@ export const Info = (props) => (
 		width={props.width} height={props.height}
 		viewBox="0 0 496.304 496.303" 
 		// style="enable-background:new 0 0 496.304 496.303;"
-		stroke={props.stroke} stroke-width={props.strokeWidth} fill={props.fill}
+		stroke={props.stroke} strokeWidth={props.strokeWidth} fill={props.fill}
 		>
 		<g>
 			<path d="M248.146,0C111.314,0,0,111.321,0,248.152c0,136.829,111.314,248.151,248.146,248.151

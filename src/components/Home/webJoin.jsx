@@ -1,7 +1,9 @@
-import { HStack, VStack, Heading, Text, Divider, Box } from "@chakra-ui/react";
+import { HStack, VStack, Heading, Text, Divider, Box, Spacer } from "@chakra-ui/react";
 import { Container } from "./Container";
 import { Yacht } from "../../assets/Home/Media/yacht";
 import { WebSignup } from "../../assets/Home/webSignup";
+import FormManager from "../utils/form";
+import { Email } from "../../assets/Home/email";
 
 export const WebJoin = () => (
     <Container width={'100vw'} px={20} py={10} height={'100vh'} mb={0} >
@@ -24,22 +26,23 @@ export const WebJoin = () => (
                 </Text>
             </HStack>
             <Divider left={'50%'} width={'50%'} position={'relative'}/>
-            <VStack>
+            <VStack alignItems={'flex-start'}>
                 <HStack alignItems={'top'} width={'100%'} justifyContent={'space-between'}>
                     <Heading variant="special" fontWeight={700}>
                         JOIN THE YACHT CLUB
                     </Heading>
                     <Text variant="info" textAlign={'right'} >
-                        earn passively and <br/>support our oceans
+                        earn passively and <br/> support our oceans
                     </Text>
                 </HStack>
                 <Divider width={'35%'}/>
+                <Spacer />
+                <Box position={'absolute'} width={'20%'} right={10} bottom={-50} p={5} mr={10} rounded={'lg'} borderWidth={"1px"} borderColor={'accent'} bg={'black'} zIndex={1} my={10}>
+                    <FormManager CTA_accent={'EMAIL'} CTA_reg={'ME'} CTA_icon={<Email/>} buttonWidth={'17vw'}/>
+                </Box>
                 <Box display={'flex'} justifyContent={'flex-end'}>
-                    <Box position={'absolute'} width={'30%'} left={"5%"} bottom={100}>
-                        <WebSignup />
-                    </Box>
-                    <Box position={'absolute'} right={-10}>
-                        <Yacht />
+                    <Box position={'absolute'} left={"-150px"}>
+                        <Yacht/>
                     </Box>
                 </Box>
             </VStack>

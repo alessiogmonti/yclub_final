@@ -20,6 +20,7 @@ export const CTA = () => (
     py={3}
     px={5}
     zIndex={2}
+    justifyContent={'space-around'}
   >
     < CustomButton  
                     variant={'main-link'} 
