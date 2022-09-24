@@ -5,10 +5,10 @@ import TokenomicsWeb from "../../components/Home/tokenomicsWeb"
 
 const Tokenomics = () => (
     <>
-        <Show breakpoint='(max-width: 900px)'>
+        <Show breakpoint='(max-width: 1113px)'>
             <TokenomicsMobile />
         </Show>
-        <Show breakpoint='(min-width: 901px)'>
+        <Show breakpoint='(min-width: 1114px)'>
             <TokenomicsWeb />
         </Show>
     </>

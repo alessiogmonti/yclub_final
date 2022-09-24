@@ -6,7 +6,7 @@ import { Box } from "@chakra-ui/react"
 import { Scroller } from "../../components/Global/scroller"
 import { Heading, Center } from "@chakra-ui/react"
 
-import { DataContainer } from "./dataContainer"
+import { DataContainer } from "./mobileDataContainer"
 
 const data = [
     { title : 'Drakar', date: 'Q1 2022', content: <DataContainer hasPassed data={ ['Research & Development', 'Concept Development'] } />},

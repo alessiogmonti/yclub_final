@@ -43,9 +43,9 @@ export const WebTeam = () => (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
         <Box layerStyle={'background'} sx={{filter:'blur(38px)'}}/>
         <DarkModeSwitch />
-        <Box position={'absolute'} width={'80vw'} right={'-55%'} top={20}>
-            <Box width={'99vw'} height={'100vh'}>
-                <Scroller data={items}/>
+        <Box position={'absolute'} width={'80vw'} right={'-55%'} top={20} style={{zIndex:10}}>
+            <Box width={'99vw'} height={'100vh'} >
+                <Scroller data={items} width={'48vw'}/>
             </Box>
         </Box>
     </motion.div>

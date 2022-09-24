@@ -33,7 +33,7 @@ function Swiper(props) {
             {[...Array(props.data.length)].map( (d, index) => (
                 <>
                 { position==index ? <Circle size={8} bg={'light'} borderColor={'accent'} borderWidth={'1px'}/> :
-                <Circle size={5} bg={'dark'} borderColor={'light'} borderWidth={'1px'}/> }
+                <Circle key={index} onClick={() => positionSet(index)} size={5} bg={'dark'} borderColor={'light'} borderWidth={'1px'}/> }
                 <Spacer />
                 </>
             ))}

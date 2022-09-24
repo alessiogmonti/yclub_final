@@ -13,10 +13,10 @@ const data = [
 
 const Launchpad = () => (
     <>
-        <Show breakpoint='(max-width: 800px)'>
+        <Show breakpoint='(max-width: 1113px)'>
             <MobileLaunchpad data={data} />
         </Show>
-        <Show breakpoint='(min-width: 801px)'>
+        <Show breakpoint='(min-width: 1114px)'>
             <WebLaunchpad data={data} />
         </Show>
     </>

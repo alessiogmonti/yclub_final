@@ -9,6 +9,8 @@ import { Ethereum } from "../../assets/Launchpad/ethereum"
 import { Dollar } from "../../assets/Launchpad/dollar"
 import lanaImg from '../../assets/Launchpad/Media/lana.png'
 
+import { AiFillCloseCircle } from 'react-icons/ai';
+
 
 export const Card = (props) => (
     <>
@@ -81,7 +83,7 @@ export const Card = (props) => (
                 available
                 regular_text={'MINT'}
                 position={'relative'}
-                icon={props.active? <Ethereum
+                icon={props.stock? <Ethereum
                     fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
                     /> : <AiFillCloseCircle fontSize={'55px'}/>} />
             <Spacer/>
@@ -89,7 +91,7 @@ export const Card = (props) => (
                 available
                 direction={'row-reverse'}
                 regular_text={'CARD'}
-                icon={props.active? <Dollar
+                icon={props.stock? <Dollar
                     fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
                     /> : <AiFillCloseCircle fontSize={'55px'}/>} />
         </Flex>

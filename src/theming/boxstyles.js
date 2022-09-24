@@ -12,7 +12,7 @@ export const BoxStyles = {
         },
         height: '59px',
         width: ['95vw','50vw'],
-        minWidth: 'max-content'
+        // minWidth: 'max-content'
     },
 
     'background' : {

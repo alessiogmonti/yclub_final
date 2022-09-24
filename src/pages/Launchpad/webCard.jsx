@@ -27,7 +27,7 @@ export const Card = (props) => (
             </Heading>
         </Box>
     </Flex> */}
-    <Box width={'100%'} verticalAlign={'top'} alignItems={'center'} justifyContent={'center'}>
+    <Box width={'100%'} verticalAlign={'top'} alignItems={'center'} maxWidth={['30vw','30vw','40vw','60vw']}  justifyContent={'center'}>
         <Image src={lanaImg} alt='Lana_arctic' borderRadius={'65px'} position={'relative'} style={{zIndex:1}} right={0} />
         <Flex justifyContent={'center'} position={'relative'} style={{zIndex:0}} width={'auto'} >
             <Box   

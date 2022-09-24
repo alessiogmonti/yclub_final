@@ -1,8 +1,10 @@
 import { Logo } from "./Home/Logo"
-import { AiOutlineRightCircle, AiOutlineLeftCircle, AiOutlineDownCircle } from "react-icons/ai"
+import { AiOutlineRightCircle, AiOutlineLoading, AiOutlineDownCircle } from "react-icons/ai"
+import { MdConstruction } from "react-icons/md"
+
 import { CTA } from "./Global/CTA"
-import { Link } from "react-router-dom"
-import { Box, Flex, VStack, Text, HStack, IconButton, useBoolean, useColorModeValue, Heading, useColorMode } from "@chakra-ui/react"
+import { Link as RLink } from "react-router-dom"
+import { Box, Flex, VStack, Text, HStack, IconButton, useBoolean, useColorModeValue, Heading, Link } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { CustomButton } from "../assets/button"
 import { Arrow } from '../assets/arrow'
@@ -12,31 +14,31 @@ import { Socials } from "./Home/webSocials"
 const links = [ 
     {'field': 'community', 'active':false, 
       'sublinks': [
-        { 'field': 'philosophy', 'active':false},
-        { 'field': 'press', 'active':false},
-        { 'field': 'join us', 'active':false}
+        { 'field': 'philosophy', 'active':false, 'available':false},
+        { 'field': 'press', 'active':false, 'available':false},
+        { 'field': 'join us', 'active':false, 'available':false}
       ]
   }, 
     {'field': 'invest', 'active':false, 
       'sublinks': [
-        { 'field': 'collection', 'active':false},
-        { 'field': 'marketplace', 'active':false},
-        { 'field': 'launchpad', 'active':false},
-        { 'field': 'store', 'active':false}
+        { 'field': 'collection', 'active':false, 'available':false},
+        { 'field': 'marketplace', 'active':false, 'available':false},
+        { 'field': 'launchpad', 'active':false, 'available':true},
+        { 'field': 'store', 'active':false, 'available':false}
       ]
   }, 
     {'field': 'about', 'active':true, 
       'sublinks': [
-        { 'field': 'roadmap', 'active':false},
-        { 'field': 'whitepaper', 'active':false},
-        { 'field': 'team', 'active':false}
+        { 'field': 'roadmap', 'active':false, 'available':true},
+        { 'field': 'whitepaper', 'active':false, 'available':true},
+        { 'field': 'team', 'active':false, 'available':true}
       ]
     }
 ]
 
 export const LandingLogo = () => {
-    const [active, setActive] = useState('')
     const [location, setLocation] = useState('/')
+    const [clicked, setClicked] = useState()
     return(
       <>
         <Box position={'absolute'} top={5} left={10}>
@@ -57,7 +59,7 @@ export const LandingLogo = () => {
               <Flex position={'relative'} top={"15%"} width={'60vw'} left={0}>
                   <VStack position={'absolute'} zIndex={2} left={-150} top={150} alignItems={'left'}>
                       {links.map( (d,idx) =>
-                        <LinkBox location={location} setLocation={setLocation} offset={100*idx} {...d} />
+                        <LinkBox key={idx} item={idx} location={location} setLocation={setLocation} clicked={clicked} setClicked={setClicked} offset={idx} {...d} />
                       )}
                   </VStack>
                   <Logo marginLeft={50} right={150} width={"55vw"}/>
@@ -70,18 +72,18 @@ export const LandingLogo = () => {
   }
 
 const LinkBox = (props) => {
-    const [click, setClick] = useBoolean()
+    
     return(
     <>
-        <Box layerStyle={'button'} width={'auto'} height={'auto'} pl={2.5} onClick={setClick.toggle}>
+        <Box layerStyle={'button'} width={'auto'} height={'auto'} pl={2.5} onClick={ () => {props.setClicked(props.item)} }>
             <HStack justifyContent={'space-between'}>
                 <Text variant={'webmenu'}> {props.field} </Text>
-                <IconButton color={click? 'accent':useColorModeValue('dark','light')} variant={'ghost'} icon={click ? <AiOutlineDownCircle/> : <AiOutlineRightCircle/>} rounded={'full'} zIndex={1} fontSize={"40px"}/>
+                <IconButton color={props.clicked === props.item ? 'accent':useColorModeValue('dark','light')} variant={'ghost'} icon={props.clicked === props.item ? <AiOutlineDownCircle/> : <AiOutlineRightCircle/>} rounded={'full'} zIndex={1} fontSize={"40px"}/>
             </HStack>
         </Box>
         {
-            click && (
-                <Box position={'relative'} top={320} left={180} overflow={'visible'}>
+            props.clicked === props.item && (
+                <Box position={'relative'} top={320-props.offset} left={180} overflow={'visible'}>
                     {props.sublinks.map( (d2,index) => (
                             <Box position={'absolute'} bottom={index*55+"px"} right={index*55+"px"} overflow={'visible'} >
                                         <LinkButton location={props.location} setLocation={props.setLocation} {...d2} />
@@ -103,20 +105,20 @@ const LinkButton = (props) => {
 }, [active])
   return(
     <>
-      <Link to={link} style={{margin:20}} 
+      <Link as={RLink} to={link} style={{margin:20}} 
             onClick = {() => setActive(!active)}>     
-          {  active ?
+          { active ?
               <CustomButton
                       buttonHeight={'auto'}
                       buttonWidth={'260px'}
                       variant={'webmenu'} 
                       regular_text={props.field} 
-                      icon={<Arrow 
+                      icon={(<Arrow 
                           strokeWidth={'0.25px'}
                           width={'45px'}
                           height={'45px'}
                           fill={'#2491EB'}
-                          />} 
+                          />)} 
                       rotation={ {transform: 'rotate(-46.69deg)'}}  />
               :
               <CustomButton
@@ -124,15 +126,15 @@ const LinkButton = (props) => {
                       buttonWidth={'260px'}
                       variant={'webmenu'} 
                       regular_text={props.field} 
-                      icon={<Arrow 
+                      icon={ (<Arrow 
                           strokeWidth={'0.25px'}
                           width={'45px'}
                           height={'45px'}
                           fill={useColorModeValue('rgba(5,21,52,0.99)', 'white')}
-                          />} 
+                          />)} 
                       rotation={ {transform: 'rotate(46.69deg)'}}  />
           }
-      </Link>
+        </Link>
     </>
     )
   }

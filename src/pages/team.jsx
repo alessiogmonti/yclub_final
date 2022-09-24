@@ -4,14 +4,14 @@ import { WebTeam } from "./Team/webTeam"
 import { Show } from "@chakra-ui/react"
 
 const Team = () => (
-    <>
-        <Show breakpoint='(max-width: 800px)'>
+    < div >
+        <Show breakpoint='(max-width: 1113px)'>
             <MobileTeam/>
         </Show>
-        <Show breakpoint='(min-width: 801px)'>
-            <WebTeam/>
+        <Show breakpoint='(min-width: 1114px)'>
+            <WebTeam />
         </Show>
-    </>
+    </div >
 )
 
 export default Team

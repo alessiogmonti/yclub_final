@@ -5,14 +5,14 @@ import { LandingLogo } from "./components/landingLogo"
 
 const App = () => (
   <>
-    <Show breakpoint='(max-width: 800px)'>
+    <Show breakpoint='(max-width: 1113px)'>
       <BrowserRouter>
         <MobileAnimatedRoutes />
       </BrowserRouter>
     </Show>
 
 
-    <Show breakpoint='(min-width: 801px)'>
+    <Show breakpoint='(min-width: 1114px)'>
       <BrowserRouter>
         <Box display={'flex'} height={'100vh'}>
           <LandingLogo />

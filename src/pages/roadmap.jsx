@@ -5,10 +5,10 @@ import { Show } from "@chakra-ui/react"
 
 const Roadmap = () => (
     <>
-        <Show breakpoint='(max-width: 800px)'>
+        <Show breakpoint='(max-width: 1113px)'>
             <MobileRoadmap/>
         </Show>
-        <Show breakpoint='(min-width: 801px)'>
+        <Show breakpoint='(min-width: 1114px)'>
             <WebRoadmap/>
         </Show>
     </>

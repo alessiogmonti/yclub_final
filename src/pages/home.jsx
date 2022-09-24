@@ -15,7 +15,7 @@ const Home = () => {
     <Box layerStyle={'background'} sx={{filter:'blur(38px)'}}/>
     <DarkModeSwitch />
 
-    <Show breakpoint='(max-width: 800px)'>
+    <Show breakpoint='(max-width: 1113px)'>
       <Menu/>
       <Landing />
       <Video />
@@ -23,7 +23,7 @@ const Home = () => {
       <Join />
     </Show>
 
-    <Show breakpoint='(min-width: 801px)'>
+    <Show breakpoint='(min-width: 1114px)'>
       <Box width={'100vw'}>
       <Box position={'relative'} height={'100vh'}/>
       <Landing />
