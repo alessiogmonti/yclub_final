@@ -107,7 +107,7 @@ const LinkButton = (props) => {
 }, [active])
   return(
     <>
-      <Link as={RLink} to={link} style={{margin:20}} 
+      <Link as={RLink} to={props.available? link : '/'} style={{margin:20}} 
             onClick = {() => setActive(!active)}>
               {console.log(props.available)}  
             {props.available ? (   

@@ -18,29 +18,35 @@ const Home = () => {
     <Show breakpoint='(max-width: 1113px)'>
       <Menu/>
       <Landing />
+      <Show breakpoint="(max-height:400px)">
+        <Box height={'50vh'} margin={'auto'} padding={10}/>
+      </Show>
       <Video />
       <Tokenomics />
+      <Show breakpoint="(max-height:400px)">
+        <Box height={'190vh'} margin={'auto'} padding={10}/>
+      </Show>
       <Join />
     </Show>
 
     <Show breakpoint='(min-width: 1114px)'>
-      <Box width={'100vw'}>
-      <Box position={'relative'} height={'100vh'}/>
+        <Box width={'100vw'}>
+        <Box position={'relative'} height={'100vh'}/>
       <Landing />
-      <Show breakpoint="(max-height:600px)">
-        <Box height={'30vh'} margin={'auto'} padding={10}/>
-      </Show>
+                  <Show breakpoint="(max-height:600px)">
+                  <Box height={'30vh'} margin={'auto'} padding={10}/>
+                  </Show>
       <Video />
-      <Show breakpoint="(max-height:800px)">
-        <Box height={'30vh'} margin={'auto'} padding={10}/>
-      </Show>
-      <Show breakpoint="(max-height:600px)">
-        <Box height={'60vh'} margin={'auto'} padding={10}/>
-      </Show>
+          <Show breakpoint="(max-height:800px)">
+          <Box height={'100vh'} margin={'auto'} padding={10}/>
+          </Show>
+                <Show breakpoint="(max-height:600px)">
+                <Box height={'100vh'} margin={'auto'} padding={10}/>
+                </Show>
       <Tokenomics />
-      <Show breakpoint="(max-height:600px)">
-        <Box height={'60vh'} margin={'auto'} padding={10}/>
-      </Show>
+                <Show breakpoint="(max-height:600px)">
+                <Box height={'60vh'} margin={'auto'} padding={10}/>
+                </Show>
       <Join />
       </Box>
     </Show>

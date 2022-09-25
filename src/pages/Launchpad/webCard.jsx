@@ -13,7 +13,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 
 
 export const Card = (props) => (
-<>
+<div style={{transform:"scale(0.8)"}} >
     {/* <Flex position={'absolute'} top={0} width={'100%'} px={1} gap={1}>
         <Box layerStyle={'button'} height={'100%'} px={3} >
             <Heading textAlign={'center'} color={'accent'}>
@@ -82,7 +82,7 @@ export const Card = (props) => (
             </Box>
         </Flex>
     </Box>
-    <Flex position={'absolute'} bottom={150} width={'10%'} ml={10} px={1} gap={4} zIndex={3}>
+    <Flex position={'absolute'} bottom={5} width={'10%'} ml={10} px={1} gap={4} zIndex={3}>
          <BuyButton
             height={'100%'}
             available
@@ -108,5 +108,5 @@ export const Card = (props) => (
             </Heading>
         </Box>
     </Flex>
-</>
+</div>
 )

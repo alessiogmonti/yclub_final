@@ -7,16 +7,16 @@ export const Logo = (props) => (
     <Box position='relative' height={'100%'}
         ml={props.marginLeft}
         mt={4} >
-        <Media />
+        <Media LogoWidth={props.LogoWidth} />
         <Flex position={'absolute'} top={9} right={props.right} style={{zIndex:0}} >
             <Background width={props.width} fill={useColorModeValue('rgba(255,255,255,0.5)', 'rgba(5,21,52,0.68)')} />
         </Flex>
     </Box>
 )
 
-const Media = () => (
+const Media = (props) => (
     <Image 
-        maxW={'600px'}
+        maxW={props.LogoWidth || '600px'}
         width={'95%'}
         position={'relative'}
         src={logo} 
