@@ -2,7 +2,7 @@ import { Logo } from "./Home/Logo"
 import { AiOutlineRightCircle, AiOutlineLoading, AiOutlineDownCircle } from "react-icons/ai"
 import { FaDraftingCompass } from "react-icons/fa"
 import { GoCircleSlash } from "react-icons/go"
-
+import { useLocation } from "react-router-dom"
 import { CTA } from "./Global/CTA"
 import { Link as RLink } from "react-router-dom"
 import { Box, Flex, VStack, Text, HStack, IconButton, useBoolean, useColorModeValue, Heading, Link } from "@chakra-ui/react"
@@ -38,14 +38,13 @@ const links = [
 ]
 
 export const LandingLogo = () => {
-    const [location, setLocation] = useState('/')
     const [clicked, setClicked] = useState()
     return(
       <>
         <Box position={'absolute'} top={5} left={10}>
           <Box position={'fixed'} bg={useColorModeValue('dark','light')} layerStyle={'button'} width={'auto'} height={'auto'} zIndex={5}>
             <HStack>
-              <Box _hover={{bg:'whiteAlpha.200'}} px={2} > {/*onClick={() => window.scrollTo(0,0)} */}
+              <Box _hover={{bg:'whiteAlpha.200'}} px={2} >
                 <Link as={RLink} to={'/'}>
                   <YLogo />
                 </Link>
@@ -54,7 +53,7 @@ export const LandingLogo = () => {
             </HStack>
           </Box>
           <Box py={'55px'} >
-            <Heading variant={"Landing"} color={'light'}> {location != '/' ? location : null} </Heading>
+            <Heading variant={"Landing"} color={'light'}> {useLocation().pathname.replace("/","")} </Heading>
           </Box>
         </Box>
         <Box ml={"10%"} px={10} display={'flex'}>
@@ -62,7 +61,7 @@ export const LandingLogo = () => {
               <Flex position={'relative'} top={"18%"} width={'60vw'} left={0}>
                   <VStack position={'absolute'} zIndex={2} left={-150} top={150} alignItems={'left'}>
                       {links.map( (d,idx) =>
-                        <LinkBox key={idx} item={idx} location={location} setLocation={setLocation} clicked={clicked} setClicked={setClicked} offset={idx} {...d} />
+                        <LinkBox key={idx} item={idx} clicked={clicked} setClicked={setClicked} offset={idx} {...d} />
                       )}
                   </VStack>
                   <Logo marginLeft={50} right={190} logoWidth={'10%'} BackgroundWidth={"300px"}/>
@@ -88,7 +87,7 @@ const LinkBox = (props) => {
                 <Box position={'relative'} top={(180) - 45*(1+props.offset)} left={30} overflow={'visible'}>
                     {props.sublinks.map( (d2,index) => (
                             <Box position={'absolute'} top={index*55+"px"} left={index*55+"px"} overflow={'visible'} >
-                                        <LinkButton location={props.location} setLocation={props.setLocation} {...d2} />
+                                        <LinkButton {...d2} />
                             </Box>
                     ) )}
                 </Box>
@@ -103,7 +102,6 @@ const LinkButton = (props) => {
   const [active, setActive] = useState(false);
   useEffect( () => {
     active ? setLink('/') : setLink(props.field);
-    active ? props.setLocation(props.field) : props.setLocation(null)
 }, [active])
   return(
     <>
