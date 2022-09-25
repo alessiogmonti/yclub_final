@@ -9,7 +9,7 @@ export const Logo = (props) => (
         mt={4} >
         <Media LogoWidth={props.LogoWidth} />
         <Flex position={'absolute'} top={9} right={props.right} style={{zIndex:0}} >
-            <Background width={props.width} fill={useColorModeValue('rgba(255,255,255,0.5)', 'rgba(5,21,52,0.68)')} />
+            <Background width={props.BackgroundWidth} fill={useColorModeValue('rgba(255,255,255,0.5)', 'rgba(5,21,52,0.68)')} />
         </Flex>
     </Box>
 )
@@ -17,7 +17,7 @@ export const Logo = (props) => (
 const Media = (props) => (
     <Image 
         maxW={props.LogoWidth || '600px'}
-        width={'95%'}
+        width={'85%'}
         position={'relative'}
         src={logo} 
         style={{zIndex:1}}

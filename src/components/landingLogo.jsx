@@ -65,7 +65,7 @@ export const LandingLogo = () => {
                         <LinkBox key={idx} item={idx} location={location} setLocation={setLocation} clicked={clicked} setClicked={setClicked} offset={idx} {...d} />
                       )}
                   </VStack>
-                  <Logo marginLeft={50} right={150} width={"55vw"}/>
+                  <Logo marginLeft={50} right={190} logoWidth={'10%'} BackgroundWidth={"300px"}/>
                 </Flex>
           </Box>
         </Box>
@@ -76,7 +76,7 @@ export const LandingLogo = () => {
 
 const LinkBox = (props) => {
     return(
-    <>
+    <div position={'static'}>
         <Box layerStyle={'button'} width={'auto'} height={'auto'} pl={2.5} onClick={ () => {props.setClicked(props.item)} }>
             <HStack justifyContent={'space-between'}>
                 <Text variant={'webmenu'}> {props.field} </Text>
@@ -85,16 +85,16 @@ const LinkBox = (props) => {
         </Box>
         {
             props.clicked === props.item && (
-                <Box position={'relative'} top={320-props.offset} left={180} overflow={'visible'}>
+                <Box position={'relative'} top={(180) - 45*(1+props.offset)} left={30} overflow={'visible'}>
                     {props.sublinks.map( (d2,index) => (
-                            <Box position={'absolute'} bottom={index*55+"px"} right={index*55+"px"} overflow={'visible'} >
+                            <Box position={'absolute'} top={index*55+"px"} left={index*55+"px"} overflow={'visible'} >
                                         <LinkButton location={props.location} setLocation={props.setLocation} {...d2} />
                             </Box>
                     ) )}
                 </Box>
             )
         }
-    </>
+    </div>
     )
 }
 
@@ -109,7 +109,6 @@ const LinkButton = (props) => {
     <>
       <Link as={RLink} to={props.available? link : '/'} style={{margin:20}} 
             onClick = {() => setActive(!active)}>
-              {console.log(props.available)}  
             {props.available ? (   
           active ?
               <CustomButton 
@@ -142,7 +141,7 @@ const LinkButton = (props) => {
             buttonWidth={'260px'}
             variant={'webmenu'} 
             regular_text={props.field} 
-            icon={ (<GoCircleSlash fontSize={'38px'} 
+            icon={ (<GoCircleSlash fontSize={'45px'} style={{padding:10}}
                 />)} 
               />) }
         </Link>

@@ -1,4 +1,4 @@
-import { HStack, VStack, Heading, Text, Divider, Box, Spacer } from "@chakra-ui/react";
+import { HStack, VStack, Heading, Text, Divider, Box, Spacer, Flex } from "@chakra-ui/react";
 import { Container } from "./Container";
 import { Yacht } from "../../assets/Home/Media/yacht";
 import { WebSignup } from "../../assets/Home/webSignup";
@@ -47,5 +47,13 @@ export const WebJoin = () => (
                 </Box>
             </VStack>
         </VStack>
+        <Box position={'fixed'} left={0} bottom={0} bg={'whiteAlpha.400'} height={'20px'} width={'100vw'}>
+            <Flex>
+                <Text ml={1} pl={1}> YCLUB &copy; 2022</Text>
+                <Spacer />
+                <Text mr={2} pr={2}>Privacy Policy</Text>
+                <Text ml={2} pl={2} mr={1} pr={1}>Disclaimer</Text>
+            </Flex>
+        </Box>
     </Container>
 )

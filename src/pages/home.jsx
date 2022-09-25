@@ -14,7 +14,7 @@ const Home = () => {
   <Box position={'absolute'}>
     <Box layerStyle={'background'} sx={{filter:'blur(38px)'}}/>
     <DarkModeSwitch />
-
+{/* MOBILE */}
     <Show breakpoint='(max-width: 1113px)'>
       <Menu/>
       <Landing />
@@ -28,22 +28,19 @@ const Home = () => {
       </Show>
       <Join />
     </Show>
-
-    <Show breakpoint='(min-width: 1114px)'>
+{/* WEB */}
+    <Show breakpoint='(min-width: 1114px)'> 
         <Box width={'100vw'}>
         <Box position={'relative'} height={'100vh'}/>
       <Landing />
-                  <Show breakpoint="(max-height:600px)">
                   <Box height={'30vh'} margin={'auto'} padding={10}/>
-                  </Show>
       <Video />
-          <Show breakpoint="(max-height:800px)">
-          <Box height={'100vh'} margin={'auto'} padding={10}/>
-          </Show>
+          <Box height={'30vh'} margin={'auto'} padding={10}/>
                 <Show breakpoint="(max-height:600px)">
                 <Box height={'100vh'} margin={'auto'} padding={10}/>
                 </Show>
       <Tokenomics />
+          <Box height={'30vh'} margin={'auto'} padding={10}/>
                 <Show breakpoint="(max-height:600px)">
                 <Box height={'60vh'} margin={'auto'} padding={10}/>
                 </Show>

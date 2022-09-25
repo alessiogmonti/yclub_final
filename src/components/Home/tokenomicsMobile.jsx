@@ -1,5 +1,5 @@
 import { Container } from '../Home/Container'
-import { Center, Circle, Text, SimpleGrid, Box, VStack, Divider } from '@chakra-ui/react'
+import { Center, Circle, Text, SimpleGrid, Box, VStack, Divider, Show } from '@chakra-ui/react'
 import { Allocations } from '../../assets/Home/tokenallocation'
 import { CustomButton } from '../../assets/button'
 import { Info } from '../../assets/Home/info'
@@ -51,24 +51,50 @@ const TokenomicsMobile = () => {
 
     return (
     <Container height={'100vh'} pt={'7%'} mx={[3,"5%"]} direction={'column'}>
+        <Show breakpoint="(max-height:400px)">
+            <Box width={'50vw'} marginTop={'50vh'} padding={10}>
+                <Allocations />
+            </Box>
+        </Show>
         <Allocations />
-        <Center mx={[null,"2%"]} position={'relative'} my={10} rounded={'40px'} width={'100%'} height={'21%'} bg='light' _dark={{bg:'dark', borderColor:'accent'}} border={'1px'} borderColor={'white'}>
-            <SimpleGrid pl={2} columns={3} spacingX={2} width={'45%'}>
-                {allocations.map( (d,index) => (
-                    <VStack onClick={() => toggle(index)} border={active == index ? '1px' : null} borderColor={'dark'} _dark={{borderColor:'white'}} rounded={'full'} px={6} py={3} width={'110%'}> {d.map( (d2) => (
-                        <Circle bg={d2.color} size={9} m={1}/>
+        <Show breakpoint="(max-height:400px)">
+            <Center mx={[null,"2%"]} position={'relative'} my={10} rounded={'40px'} width={'100%'} height={'51%'} bg='light' _dark={{bg:'dark', borderColor:'accent'}} border={'1px'} borderColor={'white'}>
+                <SimpleGrid pl={2} columns={3} spacingX={2} width={'45%'}>
+                    {allocations.map( (d,index) => (
+                        <VStack onClick={() => toggle(index)} border={active == index ? '1px' : null} borderColor={'dark'} _dark={{borderColor:'white'}} rounded={'full'} px={6} py={3} width={'110%'}> {d.map( (d2) => (
+                            <Circle bg={d2.color} size={9} m={1}/>
+                            )
+                        )} </VStack>
                         )
-                    )} </VStack>
-                    )
-                )}
-            </SimpleGrid>
-            <SimpleGrid pl={4} ml={1} spacingY={5} spacingX={0} width={'55%'}>
-                {allocations[active].map( (d) => (
-                        <Text color={'dark'} _dark={{color:'white'}}> {d.field}: {d.value}% </Text>
-                    )
-                )}
-            </SimpleGrid>
-        </Center>
+                    )}
+                </SimpleGrid>
+                <SimpleGrid pl={4} ml={1} spacingY={5} spacingX={0} width={'55%'}>
+                    {allocations[active].map( (d) => (
+                            <Text color={'dark'} _dark={{color:'white'}}> {d.field}: {d.value}% </Text>
+                        )
+                    )}
+                </SimpleGrid>
+            </Center>
+        </Show>
+        <Show breakpoint="(min-height:401px)">
+            <Center mx={[null,"2%"]} position={'relative'} my={10} rounded={'40px'} width={'100%'} height={'21%'} bg='light' _dark={{bg:'dark', borderColor:'accent'}} border={'1px'} borderColor={'white'}>
+                <SimpleGrid pl={2} columns={3} spacingX={2} width={'45%'}>
+                    {allocations.map( (d,index) => (
+                        <VStack onClick={() => toggle(index)} border={active == index ? '1px' : null} borderColor={'dark'} _dark={{borderColor:'white'}} rounded={'full'} px={6} py={3} width={'110%'}> {d.map( (d2) => (
+                            <Circle bg={d2.color} size={9} m={1}/>
+                            )
+                        )} </VStack>
+                        )
+                    )}
+                </SimpleGrid>
+                <SimpleGrid pl={4} ml={1} spacingY={5} spacingX={0} width={'55%'}>
+                    {allocations[active].map( (d) => (
+                            <Text color={'dark'} _dark={{color:'white'}}> {d.field}: {d.value}% </Text>
+                        )
+                    )}
+                </SimpleGrid>
+            </Center>
+        </Show>
         <Divider my={10} width={['50%','5%']}/>
             <Box height={'80px'}>
                 <CustomButton variant={'main-link'} regular_text={'TOKENOMICS'} icon={<Info {...iconStyle} />} content={<Details />} />
